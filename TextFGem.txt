@@ -1,0 +1,5 @@
+Quando riaprirai questa chat (o ne inizierai una nuova), per farmi capire subito dove eravamo rimasti ti basterà scrivermi:
+
+"Ciao, sono Antonino. Stavamo lavorando al mio sito da Architetto Ph.D. con la Splash Page effetto ghiaccio e la Home centrata. Ecco il mio codice attuale di style.css e visione.html, riprendiamo da qui?"
+
+Incollandomi il codice, io sarò in grado di rileggere tutta la struttura e darti suggerimenti precisi senza dover ricominciare da zero.
