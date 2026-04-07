@@ -21,7 +21,7 @@ header {
 /* HERO SECTION (Usa l'immagine della cartella img) */
 .hero-section {
     height: 70vh;
-    background: url('../img/hero-bg.png') center/cover no-repeat fixed;
+    background: url('img/hero-bg.png') center/cover no-repeat fixed;
     margin-top: 70px;
     position: relative;
 }
