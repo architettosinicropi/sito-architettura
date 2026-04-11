@@ -201,9 +201,56 @@ p {
 
 /* La seconda linea (Titolo Progetto) */
 .portfolio-overlay p:last-child {
-    color: #ffffff !important;      /* Bianco puro */
+    color: #f2eeee !important;      /* Bianco puro */
     font-style: italic !important;  /* Corsivo */
     font-weight: 300;               /* Più leggero per contrastare col grassetto sopra */
     font-size: 1.3rem;
     text-transform: none;           /* Mantiene il maiuscolo/minuscolo naturale */
+}
+/* --- EFFETTO ZOOM ELEGANTE --- */
+
+.portfolio-item {
+    position: relative;
+    height: 500px; /* Assicurati che l'altezza sia fissa */
+    overflow: hidden; /* Fondamentale: l'immagine non deve uscire dai bordi */
+    background-color: #000; /* Sfondo nero per dare profondità */
+    display: block;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+    /* Transizione: fluida e non troppo veloce */
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.8s ease;
+    
+    /* Opacità iniziale leggermente ridotta per far risaltare il testo */
+    opacity: 0.85; 
+}
+
+/* Quando passi il mouse sopra il contenitore */
+.portfolio-item:hover img {
+    /* Zoom del 10% */
+    transform: scale(1.1); 
+    
+    /* L'immagine diventa nitida e luminosa al passaggio */
+    opacity: 1;
+}
+
+/* --- OVERLAY (Se hai i testi sopra) --- */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+    /* Impedisce allo zoom dell'immagine di coprire il testo */
+    pointer-events: none; 
+}
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8); /* Scurisce leggermente l'immagine */
 }
