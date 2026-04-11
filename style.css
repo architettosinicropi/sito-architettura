@@ -257,7 +257,75 @@ h1 {
     color: #fff;
     font-weight: 300;
 }
+/* --- PORTFOLIO GRID OPTIMIZATION --- */
 
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Trasformiamo il link in un blocco contenitore */
+.portfolio-item {
+    display: block;          /* Importante: rende cliccabile l'intera area */
+    position: relative;
+    height: 550px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    text-decoration: none;   /* Rimuove sottolineature automatiche */
+    color: inherit;          /* Impedisce al testo di diventare blu */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s ease;
+    display: block;          /* Evita spazi bianchi sotto l'immagine */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+}
+
+/* Overlay che appare/si scurisce al passaggio */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    transition: background 0.4s ease;
+}
+
+/* Stile testi dentro l'overlay */
+.portfolio-overlay p:first-child {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #9CA3AF; /* Il tuo grigio bold */
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.portfolio-overlay p:last-child {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* Feedback visivo: scurisce leggermente l'overlay al passaggio */
+.portfolio-item:hover .portfolio-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 60%);
+}
 /* Responsive */
 @media (max-width: 768px) {
     .portfolio-grid {
@@ -266,4 +334,7 @@ h1 {
     .cv-header h1 {
         font-size: 2.2rem;
     }
+}
+body.no-scroll {
+    overflow: hidden;
 }

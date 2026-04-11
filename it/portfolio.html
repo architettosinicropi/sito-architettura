@@ -3,71 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Antonino Sinicropi</title>
-    <link rel="stylesheet" href="../style-home.css">
+    <title>Antonino Sinicropi | Architetto & Ph.D.</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style-home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-white">
+<body>
 
-    <header>
-        <div class="logo"><a href="home.html" style="text-decoration:none; color:black;">ANTONINO SINICROPI</a></div>
-        <nav class="nav-desktop">
-            <a href="home.html">Home</a>
-            <a href="cv.html">Curriculum</a>
-            <a href="home.html#contatti">Contatti</a>
-        </nav>
-    </header>
-
-    <main class="container" style="margin-top: 140px; padding-bottom: 100px;">
-        
-        <div class="portfolio-header" style="margin-bottom: 80px;">
-            <span class="label">Selezione Lavori</span>
-            <h1 style="font-size: 3rem; font-weight: 700; text-transform: uppercase; margin:0;">Portfolio</h1>
-            <p style="color: #9CA3AF; font-weight: 700; letter-spacing: 2px; margin-top:10px;">PROGETTI, RICERCA E SPERIMENTAZIONE</p>
+    <div id="menu-overlay" onclick="toggleMenu()"></div>
+<div class="portfolio-grid">
+    
+    <a href="progetti/nzeb-dettaglio.html" class="portfolio-item">
+        <img src="../img/NZEB.png" alt="Architettura Tecnica" loading="lazy">
+        <div class="portfolio-overlay">
+            <p>Architettura Tecnica</p>
+            <p>Sistemi costruttivi NZEB e involucri performanti</p>
         </div>
+    </a>
 
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-item">
-                <img src="../img/NZEB.png" alt="Involucri Metallici">
-                <div class="portfolio-overlay">
-                    <p>Architettura Tecnica</p>
-                    <p>Involucri Metallici e Sistemi NZEB</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="../img/HS.png" alt="Healthy Streets">
-                <div class="portfolio-overlay">
-                    <p>Ricerca Ph.D.</p>
-                    <p>Protocollo Healthy Streets & Rigenerazione</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="../img/UDL.png" alt="Spazi Educativi">
-                <div class="portfolio-overlay">
-                    <p>Pedagogia dello Spazio</p>
-                    <p>Ambienti Inclusivi UDL</p>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="../img/RESTORE.png" alt="Restauro">
-                <div class="portfolio-overlay">
-                    <p>Restauro</p>
-                    <p>Recupero e Valorizzazione Architettonica</p>
-                </div>
-            </div>
-
+    <a href="progetti/hs-dettaglio.html" class="portfolio-item">
+        <img src="../img/HS.png" alt="Ricerca e Rigenerazione" loading="lazy">
+        <div class="portfolio-overlay">
+            <p>Ricerca Ph.D.</p>
+            <p>Healthy Streets Protocol e benessere urbano</p>
         </div>
+    </a>
 
-        <div style="margin-top: 100px; text-align: center; border-top: 1px solid #eee; padding-top: 50px;">
-            <p style="font-size: 0.8rem; color: #e2e2e2; margin-bottom: 20px;">VUOI APPROFONDIRE UN PROGETTO?</p>
-            <a href="mailto:architettosinicropi@gmail.com" class="contact-link" style="font-size: 1rem;">Richiedi Portfolio Integrale</a>
+    <a href="progetti/udl-dettaglio.html" class="portfolio-item">
+        <img src="../img/UDL.png" alt="UDL e Inclusione" loading="lazy">
+        <div class="portfolio-overlay">
+            <p>UDL e Inclusione</p>
+            <p>Progettazione universale e accessibilità sociale</p>
         </div>
-    </main>
+    </a>
 
-</body>
-</html>
+    <a href="progetti/restore-dettaglio.html" class="portfolio-item">
+        <img src="../img/RESTORE.png" alt="Recupero e Restauro" loading="lazy">
+        <div class="portfolio-overlay">
+            <p>Recupero e Restauro</p>
+            <p>Interventi sul patrimonio e innovazione materica</p>
+        </div>
+    </a>
+
+    <a href="progetti/residenziale-dettaglio.html" class="portfolio-item">
+        <img src="../img/RESIDENTIAL.png" alt="Realizzazioni Abitative" loading="lazy">
+        <div class="portfolio-overlay">
+            <p>Realizzazioni Abitative</p>
+            <p>Nuovi complessi residenziali e interventi abitativi</p>
+        </div>
+    </a>
+
+</div>
