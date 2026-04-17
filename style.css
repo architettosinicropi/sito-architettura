@@ -24,7 +24,7 @@ body, html {
     /* SFONDO DINAMICO */
     /* Nota: il percorso è img/hero-bg.png perché l'immagine è nella cartella img */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                url('img/hero-bg.png') center/cover no-repeat;
+                url('img/hero-bg.gif') center/cover no-repeat;
     
     text-align: center;
 }
