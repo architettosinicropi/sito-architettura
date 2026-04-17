@@ -1,137 +1,45 @@
-/* --- 1. RESET & BASE (A prova di bug per lo scroll orizzontale) --- */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Montserrat', sans-serif; 
-    -webkit-tap-highlight-color: transparent; /* Rimuove il flash azzurro al tocco */
-}
+/* RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+body { background: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
 
-html, body { 
-    background: #ffffff; 
-    color: #1a1a1a; 
-    scroll-behavior: smooth;
-    width: 100%;
-    overflow-x: hidden; /* Impedisce lo scorrimento verso destra */
-    position: relative;
-}
-
-/* --- 2. HEADER & NAVIGATION --- */
+/* HEADER */
 header {
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    right: 0;
-    width: 100%; 
-    height: 70px;
+    position: fixed; top: 0; width: 100%; height: 70px;
     background: rgba(255, 255, 255, 0.95);
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    padding: 0 50px; 
-    z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 50px; z-index: 1000;
     box-shadow: 0 1px 10px rgba(0,0,0,0.05);
 }
-
-.logo { 
-    font-weight: 700; 
-    letter-spacing: 2px; 
-    color: #000; 
-    text-decoration: none;
-}
-
+.logo { font-weight: 700; letter-spacing: 2px; color: #000; }
 .nav-desktop a {
-    text-decoration: none; 
-    color: #333; 
-    margin-left: 30px;
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
+    text-decoration: none; color: #333; margin-left: 30px;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
     transition: 0.3s;
 }
-
 .nav-desktop a:hover { color: #555; }
 
-/* --- 3. HAMBURGER & SIDEBAR (Mobile) --- */
-.hamburger { 
-    display: none; 
-    cursor: pointer; 
-    flex-direction: column; 
-    gap: 5px; 
-    padding: 10px;
-    z-index: 2100;
-    border: none;
-    background: transparent;
-}
-
-.hamburger span { width: 25px; height: 1px; background: #000; transition: 0.3s; }
-
-/* Effetto Tap sull'hamburger */
-.hamburger:active { transform: scale(0.9); }
-
-.sidebar {
-    position: fixed; 
-    left: -100%; 
-    top: 0; 
-    width: 280px; 
-    height: 100%;
-    background: #fff; 
-    z-index: 2000; 
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-    padding: 100px 40px;
-}
-
-.sidebar.active { left: 0; }
-
-.sidebar a { 
-    display: block; 
-    color: #000; 
-    text-decoration: none; 
-    margin-bottom: 30px; 
-    font-size: 1.1rem; 
-}
-
-.sidebar a:active { opacity: 0.6; }
-
-#menu-overlay {
-    position: fixed; 
-    display: none; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: rgba(0,0,0,0.5); 
-    z-index: 1500; 
-    backdrop-filter: blur(5px);
-}
-
-#menu-overlay.active { display: block; }
-
-/* --- 4. HERO SECTION --- */
+/* HERO SECTION */
 .hero-section {
     height: 70vh;
     background: url('img/hero-bg.png') center/cover no-repeat fixed;
     margin-top: 70px;
     position: relative;
 }
-
 .hero-overlay {
     background: rgba(0, 0, 0, 0.3);
     height: 100%; display: flex; align-items: center; justify-content: center;
 }
-
-.hero-text { color: white; text-align: center; padding: 0 20px; }
-
+.hero-text { color: white; text-align: center; }
 .hero-text h2 { 
-    font-size: clamp(1.8rem, 5vw, 3.5rem); 
+    font-size: clamp(2rem, 5vw, 3.5rem); 
     font-weight: 300; 
-    letter-spacing: clamp(4px, 1vw, 10px); 
+    letter-spacing: 10px; 
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 .hero-text p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #cfd7db;
     text-transform: uppercase;
@@ -140,136 +48,385 @@ header {
     text-shadow: 0px 2px 4px rgba(0,0,0,0.3); 
 }
 
-/* --- 5. GRIDS & PORTFOLIO (Sistema Zoom Unificato) --- */
-.portfolio-grid, .project-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.portfolio-item {
-    display: block; 
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-    text-decoration: none;
-    background-color: #000;
-}
-
-/* Effetto Tap sull'intero progetto */
-.portfolio-item:active { transform: scale(0.98); transition: 0.1s; }
-
-.portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.85;
-    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;
-    will-change: transform; /* Ottimizzazione performance */
-}
-
-.portfolio-item:hover img {
-    transform: scale(1.1);
-    opacity: 1;
-    filter: brightness(0.8);
-}
-
-.portfolio-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 40px;
-    z-index: 5;
-    pointer-events: none; /* Il click passa all'elemento sotto */
-}
-
-/* Testi Overlay */
-.portfolio-overlay p:first-child {
-    color: #ffffff;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
-    margin-bottom: 8px;
-}
-
-.portfolio-overlay p:last-child {
-    color: #f2eeee;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 1.3rem;
-}
-
-/* --- 6. CONTENT SECTIONS --- */
-.content-section, .dark-section { padding: 100px 10%; width: 100%; }
-.dark-section { background: #1a1a1a; color: #fff; }
-.container { max-width: 1200px; margin: 0 auto; }
-
-h3 { font-size: 2.2rem; font-weight: 300; margin-bottom: 30px; line-height: 1.2; }
-p { font-size: 1.1rem; color: #6b7280; line-height: 1.8; }
-
+/* LABEL TECNICHE */
 .label { 
     color: #219EBC;
     text-transform: uppercase; 
     font-size: 0.8rem; 
     font-weight: 700;
     letter-spacing: 2px; 
+    display: block; 
     margin-bottom: 20px; 
 }
 
-/* --- 7. PAGINE PROGETTI (Sottocartelle) --- */
-.project-detail-container {
-    max-width: 1200px;
-    margin: 100px auto 50px auto;
-    padding: 0 20px;
+/* CONTENT SECTIONS */
+.content-section { padding: 100px 10%; background: #fff; }
+.container { max-width: 1200px; margin: 0 auto; }
+h3 { font-size: 2.2rem; font-weight: 300; margin-bottom: 30px; line-height: 1.2; }
+p { font-size: 1.1rem; color: #555; max-width: 800px; }
+
+/* DARK SECTION */
+.dark-section { padding: 100px 10%; background: #1a1a1a; color: #fff; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.feature h4 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; font-weight: 400; }
+.feature p { color: #aaa; font-size: 0.95rem; }
+
+/* MOBILE NAVIGATION */
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 25px; height: 1px; background: #000; }
+.sidebar {
+    position: fixed; left: -100%; top: 0; width: 280px; height: 100%;
+    background: #fff; z-index: 2000; transition: 0.4s; padding: 100px 40px;
+}
+.sidebar.active { left: 0; }
+.sidebar a { display: block; color: #000; text-decoration: none; margin-bottom: 30px; font-size: 1.1rem; }
+#menu-overlay {
+    position: fixed; display: none; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); z-index: 1500; backdrop-filter: blur(5px);
+}
+#menu-overlay.active { display: block; }
+
+/* ANIMATION */
+.fade-in { animation: fadeIn 2s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* PROFILO GRID */
+.grid-profile {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.profile-text p { margin-bottom: 25px; line-height: 1.8; }
+.profile-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-left: 1px solid #e0e0e0;
+    padding-left: 40px;
+}
+.stat-item { display: flex; flex-direction: column; }
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #9CA3AF;
+    letter-spacing: 2px;
+}
+.stat-desc {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 1px;
+    margin-top: 5px;
 }
 
-.project-main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 50px; }
+/* --- RIPRISTINO PORTFOLIO ORIGINALE --- */
+.portfolio-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+    gap: 30px;
+    margin-top: 40px;
+}
 
+/* Questa regola ora funziona sia che tu usi <div> sia che tu usi <a> */
+.portfolio-item {
+    display: block !important; 
+    position: relative !important;
+    height: 500px !important;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.portfolio-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Impedisce l'immagine gigante */
+    display: block;
+}
+
+.portfolio-overlay {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 30%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 40px;
+    z-index: 5;
+}
+
+/* DETTAGLIO PROGETTO - SIDEBAR & GRID */
+.project-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
 .project-sidebar > div {
     background: #f9f9f9;
     padding: 30px;
     border-left: 3px solid #9CA3AF;
 }
 
-/* --- 8. RESPONSIVE DESIGN (Fix finale) --- */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-    header { padding: 0 20px; }
     .nav-desktop { display: none; }
     .hamburger { display: flex; }
-    
-    .content-section, .dark-section { padding: 60px 20px; }
-    
-    .grid-2, .grid-profile, .project-main-grid { 
-        grid-template-columns: 1fr; 
-        gap: 40px; 
-    }
-
-    .portfolio-grid, .project-gallery-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
-    .portfolio-item { height: 300px !important; }
-    
-    .portfolio-overlay { padding: 20px; }
-
-    /* Riduzione dello zoom su mobile per evitare "tagli" */
-    .portfolio-item:hover img { transform: scale(1.05); }
+    header { padding: 0 20px; }
+    .grid-2, .grid-profile, .project-main-grid { grid-template-columns: 1fr; gap: 40px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .profile-stats { border-left: none; border-top: 1px solid #e0e0e0; padding-left: 0; padding-top: 40px; flex-direction: row; flex-wrap: wrap; }
 }
 
-@media (max-width: 480px) {
-    .portfolio-item { height: 250px !important; }
-    .hero-text h2 { letter-spacing: 4px; }
+p {
+    color: #6b7280; /* Grigio medio-chiaro, molto leggibile */
 }
 
-/* Animazione Fade-In */
-.fade-in { animation: fadeIn 1.5s ease forwards; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.project-description p {
+    color: #9ca3af; /* Grigio tecnico chiaro, ottimo per i dettagli */
+}
+/* --- TESTI PORTFOLIO: GRASSETTO E CORSIVO --- */
+
+/* La prima linea (Categoria) */
+.portfolio-overlay p:first-child {
+    color: #ffffff !important;      /* Bianco puro */
+    font-weight: 700 !important;   /* Grassetto */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+
+/* La seconda linea (Titolo Progetto) */
+.portfolio-overlay p:last-child {
+    color: #f2eeee !important;      /* Bianco puro */
+    font-style: italic !important;  /* Corsivo */
+    font-weight: 300;               /* Più leggero per contrastare col grassetto sopra */
+    font-size: 1.3rem;
+    text-transform: none;           /* Mantiene il maiuscolo/minuscolo naturale */
+}
+/* --- EFFETTO ZOOM ELEGANTE --- */
+
+.portfolio-item {
+    position: relative;
+    height: 500px; /* Assicurati che l'altezza sia fissa */
+    overflow: hidden; /* Fondamentale: l'immagine non deve uscire dai bordi */
+    background-color: #000; /* Sfondo nero per dare profondità */
+    display: block;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+    /* Transizione: fluida e non troppo veloce */
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.8s ease;
+    
+    /* Opacità iniziale leggermente ridotta per far risaltare il testo */
+    opacity: 0.85; 
+}
+
+/* Quando passi il mouse sopra il contenitore */
+.portfolio-item:hover img {
+    /* Zoom del 10% */
+    transform: scale(1.1); 
+    
+    /* L'immagine diventa nitida e luminosa al passaggio */
+    opacity: 1;
+}
+
+/* --- OVERLAY (Se hai i testi sopra) --- */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+    /* Impedisce allo zoom dell'immagine di coprire il testo */
+    pointer-events: none; 
+}
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8); /* Scurisce leggermente l'immagine */
+}
+/* Sezione specifica per le pagine dentro la cartella projects */
+.project-content {
+    max-width: 1200px;
+    margin: 120px auto; /* Spazio per l'header fisso */
+    padding: 0 20px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne pulite */
+    gap: 15px;
+}
+
+/* Applica lo zoom anche alle immagini dei sottolivelli */
+.project-gallery img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05); /* Uno zoom più discreto per i dettagli */
+}
+/* --- OTTIMIZZAZIONE MOBILE (TABLET E SMARTPHONE) --- */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Forza la griglia a una sola colonna */
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr !important; /* Una colonna sola */
+        gap: 15px; /* Spazio ridotto tra i progetti */
+        padding: 10px;
+    }
+
+    /* 2. Regola l'altezza degli elementi */
+    .portfolio-item {
+        height: 350px !important; /* Altezza ridotta per non riempire troppo lo schermo */
+        margin-bottom: 10px;
+    }
+
+    /* 3. Gestione dei testi (Sottolivelli) */
+    .portfolio-overlay {
+        padding: 20px; /* Meno spazio interno */
+        background: linear-gradient(transparent, rgba(0,0,0,0.8)); /* Overlay più scuro per leggere meglio */
+    }
+
+    .portfolio-overlay p:last-child {
+        font-size: 1.1rem !important; /* Testo leggermente più piccolo */
+    }
+
+    /* 4. Disabilita lo zoom al passaggio (o rendilo più leggero) */
+    /* Su mobile l'hover può creare fastidi al tocco */
+    .portfolio-item:hover img {
+        transform: scale(1.05); /* Zoom molto ridotto */
+    }
+    
+    /* 5. Navbar Mobile (se la tua barra di navigazione salta) */
+    nav {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- OTTIMIZZAZIONE PER SMARTPHONE PICCOLI --- */
+@media screen and (max-width: 480px) {
+    .portfolio-item {
+        height: 280px !important;
+    }
+}/* --- OTTIMIZZAZIONE SOTTOCARTELLE (PROJECTS) PER MOBILE --- */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Spaziatura della pagina progetto */
+    .project-detail-container {
+        margin-top: 70px; /* Riduce lo spazio superiore per i telefoni */
+        padding: 0 15px;
+    }
+
+    /* 2. Titoli e Testi nei sottolivelli */
+    .project-title {
+        font-size: 1.8rem !important; /* Titolo più leggibile su mobile */
+        margin-bottom: 10px;
+    }
+
+    .project-description {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* 3. La Griglia dei Progetti (all'interno di projects) */
+    .project-gallery-grid {
+        grid-template-columns: 1fr !important; /* Forza sempre la colonna singola */
+        gap: 10px;
+    }
+
+    /* 4. Altezza delle immagini nei sottolivelli */
+    .project-gallery-grid .portfolio-item {
+        height: 250px !important; /* Più basse per non dover scrollare troppo */
+    }
+
+    /* 5. Comportamento dello Zoom su Mobile */
+    /* Lo zoom 1.1 su mobile può "tagliare" troppo l'immagine, meglio ridurlo */
+    .project-gallery-grid .portfolio-item:hover img {
+        transform: scale(1.03); 
+    }
+
+    /* 6. Fix per la Barra di Navigazione nei sottolivelli */
+    /* Se la tua nav ha link con molto padding, qui lo riduciamo */
+    .projects-page nav a {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- FIX PER SMARTPHONE MOLTO PICCOLI (es. iPhone SE) --- */
+@media screen and (max-width: 480px) {
+    .project-gallery-grid .portfolio-item {
+        height: 200px !important;
+    }
+}
+/* --- STILI SPECIFICI PER SOTTOCARTELLE (PROJECTS) --- */
+
+/* Contenitore principale della pagina progetto */
+.project-detail-container {
+    max-width: 1100px;
+    margin: 100px auto 50px auto; /* Margine superiore per non finire sotto la nav */
+    padding: 0 20px;
+}
+
+/* Griglia interna per dettagli o gallery del progetto */
+.project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Gestione immagini nei sottolivelli con effetto zoom ereditato */
+.project-gallery-grid .portfolio-item {
+    height: 400px; /* Un po' più piccolo della home */
+    position: relative;
+    overflow: hidden;
+}
+
+.project-gallery-grid .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* Attivazione dello zoom anche nelle sottocartelle */
+.project-gallery-grid .portfolio-item:hover img {
+    transform: scale(1.08);
+}
+
+/* --- FIX PER LA NAVIGAZIONE NELLE SOTTOCARTELLE --- */
+/* Assicura che la barra rimanga visibile e corretta graficamente */
+.projects-page nav {
+    background-color: #ffffff; /* O il colore del tuo tema */
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsive per i sottolivelli */
+@media screen and (max-width: 768px) {
+    .project-gallery-grid {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+    }
+    
+    .project-detail-container {
+        margin-top: 80px;
+    }
+}
