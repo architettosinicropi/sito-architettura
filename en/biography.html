@@ -6,107 +6,131 @@
     <title>Biography | Antonino Sinicropi</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style-home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .bio-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: all 0.5s ease; border-bottom: 2px solid #111; }
-        .bio-img:hover { filter: grayscale(0%); }
-        .caption { font-size: 0.65rem; color: #888; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; font-style: normal; }
-        .img-wrapper { margin: 40px 0; }
+        :root { --main-black: #111; --text-gray: #333; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #fff; color: var(--main-black); }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Layout spacing */
+        main { padding-top: 100px; }
+
+        .bio-header { margin-bottom: 60px; }
+        .hero-title { font-size: clamp(2rem, 7vw, 3rem); font-weight: 300; line-height: 1.2; margin: 20px 0; }
+
+        /* Responsive Main Layout */
+        .bio-grid { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr; 
+            gap: 60px; 
+            align-items: start; 
+        }
+
+        .biography-content { line-height: 1.8; font-weight: 300; text-align: justify; }
+        .biography-content p { margin-bottom: 25px; }
+
+        /* Sidebar - Sticky on Desktop */
+        aside { position: sticky; top: 120px; }
+        .sidebar-box { background-color: #f9f9f9; padding: 40px; border-left: 2px solid var(--main-black); }
+        
+        .bio-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; border-bottom: 2px solid var(--main-black); margin-bottom: 30px; }
+        .img-inline { margin: 40px 0; }
+        .caption { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+
+        /* MOBILE MEDIA QUERIES */
+        @media (max-width: 992px) {
+            .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+            aside { position: relative; top: 0; order: -1; } /* Portrait moves above text on mobile */
+            .hero-title { font-size: 2.2rem; }
+            .biography-content { text-align: left; }
+            .sidebar-box { border-left: none; border-top: 2px solid var(--main-black); padding: 30px 0; background: transparent; }
+        }
+
+        @media (max-width: 600px) {
+            main { padding-top: 80px; }
+            .hero-title { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <a href="home.html" style="text-decoration:none; color:inherit;">ANTONINO SINICROPI</a>
-        </div>
+        <div class="logo"><a href="home.html" style="text-decoration:none; color:inherit;">ANTONINO SINICROPI</a></div>
         <nav class="nav-desktop">
             <a href="home.html">Home</a>
-            <a href="home.html#profilo">Profile</a>
-            <a href="cv.html">Curriculum</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="home.html#contatti">Contact</a>
         </nav>
     </header>
 
-    <main style="padding-top: 100px;">
-        <section class="content-section">
-            <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 60px 20px;">
+    <main>
+        <section class="container">
+            <div class="bio-header">
                 <span class="label">Intellectual Journey</span>
-                <h2 style="font-size: 2.8rem; line-height: 1.2; margin-bottom: 50px; font-weight: 300;">
-                    A Harmonic Synthesis of <br><strong>Space, History, and Soul</strong>
-                </h2>
+                <h1 class="hero-title">A Harmonic Synthesis of <br><strong>Space, History, and Soul</strong></h1>
+            </div>
 
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start;">
-                    
-                    <div class="biography-content" style="line-height: 1.8; color: #333; font-weight: 300; text-align: justify;">
-                        
-                        <p style="margin-bottom: 25px;">
-                            The professional path of architect Antonino Sinicropi transcends mere construction, evolving into a philosophical and technical inquiry into the quality of living. Rooted in the <strong>PAU Department of the Mediterranea University</strong>, his work has developed into a holistic vision where heritage restoration and urban regeneration converge toward a single goal: creating spaces that nourish the individual. His <strong>Ph.D. in Urban Regeneration and Safety</strong> laid the foundation for a career dedicated to safety—not as a restriction, but as a gateway to social well-being and freedom of use.
-                        </p>
+            <div class="bio-grid">
+                
+                <div class="biography-content">
+                    <p>
+                        The professional path of architect Antonino Sinicropi transcends mere construction, evolving into a philosophical and technical inquiry into the quality of living. Rooted in the <strong>PAU Department of the Mediterranea University</strong>, his work has developed into a holistic vision where heritage restoration and urban regeneration converge toward a single goal.
+                    </p>
 
-                        <div class="img-wrapper">
-                            <img src="img/gerace-3d.jpg" alt="3D Survey Gerace" class="bio-img">
-                            <p class="caption">Digital Archaeology: Photoscan Survey of Baroque Altars, Gerace Cathedral.</p>
-                        </div>
-
-                        <p style="margin-bottom: 25px;">
-                            His connection to historical memory and the sacred is epitomized by the prestigious intervention at the <strong>Cathedral of Gerace</strong> (within the "Art and Faith" project). Collaborating with the <strong>Diocese of Locri-Gerace</strong> and renowned restorer <strong>Giuseppe Mantella</strong>, Sinicropi explored new frontiers of conservation. Utilizing 3D surveys and <strong>Photoscan</strong> methodologies, he digitized marble fragments of Baroque altars to coordinate a meticulous virtual reconstruction—a bridge between traditional craftsmanship and digital precision.
-                        </p>
-
-                        <p style="margin-bottom: 25px;">
-                            His scientific research for <strong>Springer</strong>, <em>"Healthy Cities with Healthy Streets"</em>, redefines urban infrastructure as a <strong>"Third Place."</strong> This evolution was significantly shaped by his collaboration with architect <strong>Antonio Taccone</strong> and his tenure as a <strong>Visiting Scholar at Northeastern University in Boston</strong>. Together, they adapted international <em>Healthy Streets</em> models into operational strategies for the Mediterranean city, where human-centered design acts as preventive medicine for the community.
-                        </p>
-
-                        <div class="img-wrapper">
-                            <img src="img/boston-research.jpg" alt="Research Boston" class="bio-img">
-                            <p class="caption">Northeastern University, Boston: Analyzing Human-Centered Urbanism Models.</p>
-                        </div>
-
-                        <p style="margin-bottom: 25px;">
-                            Influenced by the botanical sensitivity of <strong>Paolo Pejrone</strong>, his approach to greenery is structural: a "cultured garden" where biodiversity integrates with NZEB sustainability. Simultaneously, inspired by the <strong>Isabella Stewart Gardner Museum</strong>, Sinicropi interprets museum spaces as total works of art—a "courtyard of the soul" where light, proportion, and silence engage the visitor in a transcendent experience.
-                        </p>
-
-                        <p style="margin-bottom: 25px;">
-                            This complexity is fueled by high-profile collaborations, most notably with <strong>Architect Antonello Monaco</strong>. Within <strong>ISAM</strong> (Higher Institute of Architecture and Design), their partnership transcends the academic dimension, evolving into a bond of deep friendship and mutual esteem—an elective affinity that has fostered symbiotic growth between the Roman and Reggina schools of thought.
-                        </p>
-
-                        <p>
-                            His commitment to inclusion finds fulfillment in <strong>UDL (Universal Design for Learning)</strong> specialization, applying special pedagogy to <strong>spatial neurodiversity</strong>: a vision that dismantles sensory and cognitive barriers to make beauty a universal right. 
-                         <a href="spatial-neurodiversity.html" style="color: #111; text-decoration: underline; font-weight: 400; font-size: 0.85rem; margin-left: 5px;">Explore the UDL vision →</a>
-                        </p>
-                        <p>
-                           Today, this methodology guides <strong>Strategic PNRR Governance</strong>, where he coordinates complex processes that transform European funds into a new architectural and social legacy.
-                        </p>
+                    <div class="img-inline">
+                        <img src="img/gerace-3d.jpg" alt="Gerace 3D Survey" class="bio-img">
+                        <p class="caption">Digital Archaeology: Photoscan Survey of Baroque Altars, Gerace Cathedral.</p>
                     </div>
 
-                    <aside style="position: sticky; top: 120px;">
-                        <div style="margin-bottom: 30px;">
-                            <img src="img/ritratto-antonino.jpg" alt="Antonino Sinicropi" style="width: 100%; border-bottom: 3px solid #111; filter: grayscale(100%);">
-                        </div>
+                    <p>
+                        His connection to historical memory is epitomized by the prestigious intervention at the <strong>Cathedral of Gerace</strong>. Collaborating with the Diocese of Locri-Gerace and renowned restorer <strong>Giuseppe Mantella</strong>, Sinicropi explored new frontiers of conservation through 3D surveys: a bridge between traditional craftsmanship and digital precision.
+                    </p>
 
-                        <div style="background-color: #f9f9f9; padding: 40px; border-left: 2px solid #111;">
-                            <h4 style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; font-weight: 700;">Professional Overview</h4>
-                            <ul style="list-style: none; padding: 0; font-size: 0.85rem; line-height: 2;">
-                                <li style="margin-bottom: 15px;"><strong>Digital Heritage:</strong> Gerace Cathedral (Diocese of Locri-Gerace, G. Mantella).</li>
-                                <li style="margin-bottom: 15px;"><strong>Urban Theory:</strong> Healthy Streets & A. Taccone.</li>
-                                <li style="margin-bottom: 15px;"><strong>Legacy:</strong> ISAM & Sodalizio with Antonello Monaco.</li>
-                                <li style="margin-bottom: 15px;"><strong>Landscape:</strong> Ref. Paolo Pejrone.</li>
-                                <li style="margin-bottom: 15px;"><strong>Museology:</strong> Ref. I.S. Gardner Museum.</li>
-                                <li><strong>Inclusion:</strong> UDL Pioneer & PNRR Governance.</li>
-                            </ul>
-                        </div>
-                    </aside>
+                    <p>
+                        His scientific research for <strong>Springer</strong>, <em>"Healthy Cities with Healthy Streets"</em>, redefines urban infrastructure as a "Third Place." His collaboration with architect <strong>Antonio Taccone</strong> and his tenure as a Visiting Scholar in <strong>Boston</strong> have allowed him to adapt international Healthy Streets models into operational strategies.
+                    </p>
 
+                    <div class="img-inline">
+                        <img src="img/boston-research.jpg" alt="Boston Research" class="bio-img">
+                        <p class="caption">International Research: Urban regeneration models in Boston.</p>
+                    </div>
+
+                    <p>
+                        Influenced by masters like <strong>Paolo Pejrone</strong>, his approach to greenery is structural: a "cultured garden" where biodiversity integrates with NZEB sustainability. Simultaneously, inspired by the <strong>Isabella Stewart Gardner Museum</strong>, Sinicropi interprets museum spaces as total works of art—a "courtyard of the soul."
+                    </p>
+
+                    <p>
+                        A defining element of his intellectual growth is the partnership with <strong>Architect Antonello Monaco</strong>. Within <strong>ISAM</strong>, their relationship transcends the academic dimension, evolving into a bond of deep friendship and mutual esteem: an elective affinity between the Roman and Reggina schools of thought.
+                    </p>
+
+                    <p>
+                        His commitment to inclusion finds fulfillment in <strong>UDL</strong> specialization, applying special pedagogy to spatial neurodiversity. 
+                        <a href="spatial-neurodiversity.html" style="color:#111; font-weight:700;">Explore the UDL vision →</a>
+                    </p>
                 </div>
+
+                <aside>
+                    <img src="img/ritratto-antonino.jpg" alt="Antonino Sinicropi" class="bio-img">
+                    <div class="sidebar-box">
+                        <h4 style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 20px;">Overview</h4>
+                        <ul style="list-style: none; padding: 0; font-size: 0.8rem; line-height: 2;">
+                            <li><strong>Digital Heritage:</strong> Gerace Cathedral</li>
+                            <li><strong>Urban Theory:</strong> Healthy Streets</li>
+                            <li><strong>Legacy:</strong> ISAM & Antonello Monaco</li>
+                            <li><strong>Vision:</strong> Paolo Pejrone & Gardner</li>
+                            <li><strong>Governance:</strong> PNRR Strategies</li>
+                        </ul>
+                    </div>
+                </aside>
+
             </div>
         </section>
     </main>
 
     <footer style="margin-top: 100px; padding: 50px 0; border-top: 1px solid #eee;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 0.7rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.7rem; color: #999; text-transform: uppercase;">
             <div>© 2026 Antonino Sinicropi — Architect Ph.D.</div>
-            <div>Order of Architects of Cuneo — n. 2045</div>
+            <div>Focus: Neuro-Inclusion & School Governance</div>
         </div>
     </footer>
 

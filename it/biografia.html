@@ -6,107 +6,127 @@
     <title>Biografia | Antonino Sinicropi</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style-home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .bio-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: all 0.5s ease; border-bottom: 2px solid #111; }
-        .bio-img:hover { filter: grayscale(0%); }
-        .caption { font-size: 0.65rem; color: #888; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; font-style: normal; }
-        .img-wrapper { margin: 40px 0; }
+        :root { --main-black: #111; --text-gray: #333; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #fff; color: var(--main-black); }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header spacing per mobile */
+        main { padding-top: 100px; }
+
+        .bio-header { margin-bottom: 60px; }
+        .hero-title { font-size: clamp(2rem, 7vw, 3rem); font-weight: 300; line-height: 1.2; margin: 20px 0; }
+
+        /* Layout Principale Responsivo */
+        .bio-grid { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr; 
+            gap: 60px; 
+            align-items: start; 
+        }
+
+        .biography-content { line-height: 1.8; font-weight: 300; text-align: justify; }
+        .biography-content p { margin-bottom: 25px; }
+
+        /* Sidebar che rimane fissa su desktop */
+        aside { position: sticky; top: 120px; }
+        .sidebar-box { background-color: #f9f9f9; padding: 40px; border-left: 2px solid var(--main-black); }
+        
+        .bio-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; border-bottom: 2px solid var(--main-black); margin-bottom: 30px; }
+        .img-inline { margin: 40px 0; }
+        .caption { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+
+        /* MEDIA QUERIES PER MOBILE */
+        @media (max-width: 992px) {
+            .bio-grid { grid-template-columns: 1fr; gap: 40px; }
+            aside { position: relative; top: 0; order: -1; } /* Sposta il ritratto sopra il testo su mobile */
+            .hero-title { font-size: 2.2rem; }
+            .biography-content { text-align: left; }
+            .sidebar-box { border-left: none; border-top: 2px solid var(--main-black); padding: 30px 0; background: transparent; }
+        }
+
+        @media (max-width: 600px) {
+            main { padding-top: 80px; }
+            .hero-title { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <a href="home.html" style="text-decoration:none; color:inherit;">ANTONINO SINICROPI</a>
-        </div>
+        <div class="logo"><a href="home.html" style="text-decoration:none; color:inherit;">ANTONINO SINICROPI</a></div>
         <nav class="nav-desktop">
             <a href="home.html">Home</a>
-            <a href="home.html#profilo">Profilo</a>
-            <a href="cv.html">Curriculum</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="home.html#contatti">Contatti</a>
         </nav>
     </header>
 
-    <main style="padding-top: 100px;">
-        <section class="content-section">
-            <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 60px 20px;">
+    <main>
+        <section class="container">
+            <div class="bio-header">
                 <span class="label">Il Percorso Intellettuale</span>
-                <h2 style="font-size: 2.8rem; line-height: 1.2; margin-bottom: 50px; font-weight: 300;">
-                    La Sintesi Armonica tra <br><strong>Spazio, Storia e Anima</strong>
-                </h2>
+                <h1 class="hero-title">La Sintesi Armonica tra <br><strong>Spazio, Storia e Anima</strong></h1>
+            </div>
 
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start;">
-                    
-                    <div class="biography-content" style="line-height: 1.8; color: #333; font-weight: 300; text-align: justify;">
-                        
-                        <p style="margin-bottom: 25px;">
-                            Il percorso dell'architetto Antonino Sinicropi non si esaurisce nella pratica edilizia, ma si configura come una ricerca filosofica e tecnica sulla qualità dell'abitare. Dalle radici nel <strong>Dipartimento PAU dell'Università Mediterranea</strong>, il suo lavoro si è evoluto in una visione olistica dove il restauro del patrimonio e la rigenerazione urbana convergono verso un unico obiettivo.
-                        </p>
+            <div class="bio-grid">
+                
+                <div class="biography-content">
+                    <p>
+                        Il percorso dell'architetto Antonino Sinicropi non si esaurisce nella pratica edilizia, ma si configura come una ricerca filosofica e tecnica sulla qualità dell'abitare. Dalle radici nel <strong>Dipartimento PAU dell'Università Mediterranea</strong>, il suo lavoro si è evoluto in una visione olistica dove il restauro del patrimonio e la rigenerazione urbana convergono verso un unico obiettivo.
+                    </p>
 
-                        <div class="img-wrapper">
-                            <img src="img/gerace-3d.jpg" alt="Rilievo 3D Gerace" class="bio-img">
-                            <p class="caption">Archeologia Digitale: Rilievo Photoscan Altari Barocchi, Cattedrale di Gerace.</p>
-                        </div>
-
-                        <p style="margin-bottom: 25px;">
-                            Il legame con la memoria storica si manifesta nel prestigioso intervento presso la <strong>Cattedrale di Gerace</strong> (progetto "Arte e Fede"). La collaborazione con la <strong>Diocesi di Locri-Gerace</strong> e con il restauratore <strong>Giuseppe Mantella</strong> ha permesso di sperimentare nuove frontiere della conservazione attraverso rilievi 3D e ricostruzioni virtuali: un ponte tra sapienza artigiana e accuratezza digitale.
-                        </p>
-
-                        <p style="margin-bottom: 25px;">
-                            La sua produzione scientifica per <strong>Springer</strong>, <em>"Healthy Cities with Healthy Streets"</em>, definisce la strada come <strong>"Terzo Luogo"</strong>. La collaborazione con l’architetto <strong>Antonio Taccone</strong> e l'esperienza come <strong>Visiting Scholar a Boston</strong> hanno permesso di declinare i modelli internazionali di <em>Healthy Streets</em> in strategie operative per la città mediterranea.
-                        </p>
-
-                        <div class="img-wrapper">
-                            <img src="img/boston-research.jpg" alt="Research Boston" class="bio-img">
-                            <p class="caption">Northeastern University, Boston: Analisi dei modelli di Human-Centered Urbanism.</p>
-                        </div>
-
-                        <p style="margin-bottom: 25px;">
-                            Influenzato dalla sensibilità di <strong>Paolo Pejrone</strong>, l'approccio al verde è strutturale: un "giardino colto" dove la biodiversità integra la sostenibilità NZEB. Parallelamente, guardando all’<strong>Isabella Stewart Gardner Museum</strong>, Sinicropi interpreta lo spazio museale come un’opera d’arte totale, un "cortile dell'anima" per una fruizione trascendente.
-                        </p>
-
-                        <p style="margin-bottom: 25px;">
-                            Questa complessità è alimentata dal sodalizio con l’<strong>Architetto Antonello Monaco</strong>. All'interno dell’<strong>ISAM</strong>, il rapporto supera la dimensione accademica, consolidandosi in un legame di profonda amicizia e stima: un’affinità elettiva tra la scuola romana e quella reggina.
-                        </p>
-
-                        <p>
-                         L'impegno verso l'inclusione trova compimento nella specializzazione <strong>UDL (Universal Design for Learning)</strong>. Sinicropi applica la pedagogia speciale allo spazio fisico, progettando per la <strong>neurodiversità spaziale</strong>: una visione che abbatte le barriere sensoriali e cognitive per rendere la bellezza un diritto universale. 
-                         <a href="neurodiversita-spaziale.html" style="color: #111; text-decoration: underline; font-weight: 400; font-size: 0.85rem; margin-left: 5px;">Approfondisci la visione UDL →</a>
-                        </p>
-                        <p>
-                        Attualmente, questa metodologia guida la <strong>Governance Strategica del PNRR</strong>, dove ha coordinato processi complessi che trasformano i fondi europei in una nuova eredità architettonica e sociale per il territorio.
-                        </p>
+                    <div class="img-inline">
+                        <img src="img/gerace-3d.jpg" alt="Gerace 3D" class="bio-img">
+                        <p class="caption">Archeologia Digitale: Rilievo Photoscan Altari Barocchi, Cattedrale di Gerace.</p>
                     </div>
 
-                    <aside style="position: sticky; top: 120px;">
-                        <div style="margin-bottom: 30px;">
-                            <img src="img/ritratto-antonino.jpg" alt="Antonino Sinicropi" style="width: 100%; border-bottom: 3px solid #111; filter: grayscale(100%);">
-                        </div>
+                    <p>
+                        Il legame con la memoria storica si manifesta nel prestigioso intervento presso la <strong>Cattedrale di Gerace</strong>. La collaborazione con la Diocesi di Locri-Gerace e con il restauratore <strong>Giuseppe Mantella</strong> ha permesso di sperimentare nuove frontiere della conservazione attraverso rilievi 3D: un ponte tra sapienza artigiana e accuratezza digitale.
+                    </p>
 
-                        <div style="background-color: #f9f9f9; padding: 40px; border-left: 2px solid #111;">
-                            <h4 style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 30px; font-weight: 700;">Sintesi Professionale</h4>
-                            <ul style="list-style: none; padding: 0; font-size: 0.85rem; line-height: 2;">
-                                <li style="margin-bottom: 15px;"><strong>Digital Heritage:</strong> Cattedrale di Gerace.</li>
-                                <li style="margin-bottom: 15px;"><strong>Urban Theory:</strong> Healthy Streets & A. Taccone.</li>
-                                <li style="margin-bottom: 15px;"><strong>Legacy:</strong> ISAM & Antonello Monaco.</li>
-                                <li style="margin-bottom: 15px;"><strong>Landscape:</strong> Rif. Paolo Pejrone.</li>
-                                <li style="margin-bottom: 15px;"><strong>Museology:</strong> Rif. I.S. Gardner.</li>
-                                <li><strong>Inclusion:</strong> UDL & Governance PNRR.</li>
-                            </ul>
-                        </div>
-                    </aside>
+                    <p>
+                        La sua produzione scientifica per <strong>Springer</strong>, <em>"Healthy Cities with Healthy Streets"</em>, definisce la strada come "Terzo Luogo". La collaborazione con l’architetto <strong>Antonio Taccone</strong> e l'esperienza come Visiting Scholar a <strong>Boston</strong> hanno permesso di declinare i modelli internazionali di Healthy Streets in strategie operative.
+                    </p>
 
+                    <div class="img-inline">
+                        <img src="img/boston-research.jpg" alt="Boston Research" class="bio-img">
+                        <p class="caption">Ricerca Internazionale: Modelli di rigenerazione urbana a Boston.</p>
+                    </div>
+
+                    <p>
+                        Influenzato da maestri come <strong>Paolo Pejrone</strong>, l'approccio al verde è strutturale: un "giardino colto" dove la biodiversità integra la sostenibilità NZEB. Parallelamente, guardando all’<strong>Isabella Stewart Gardner Museum</strong>, Sinicropi interpreta lo spazio museale come un’opera d’arte totale, un "cortile dell'anima".
+                    </p>
+
+                    <p>
+                        L'impegno verso l'inclusione trova compimento nella specializzazione <strong>UDL</strong>, applicando la pedagogia speciale alla neurodiversità spaziale. 
+                        <a href="neurodiversita-spaziale.html" style="color:#111; font-weight:700;">Approfondisci la visione UDL →</a>
+                    </p>
                 </div>
+
+                <aside>
+                    <img src="img/ritratto-antonino.jpg" alt="Antonino Sinicropi" class="bio-img">
+                    <div class="sidebar-box">
+                        <h4 style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 20px;">In sintesi</h4>
+                        <ul style="list-style: none; padding: 0; font-size: 0.8rem; line-height: 2;">
+                            <li><strong>Digital Heritage:</strong> Cattedrale di Gerace</li>
+                            <li><strong>Urban Theory:</strong> Healthy Streets</li>
+                            <li><strong>Legacy:</strong> ISAM & Antonello Monaco</li>
+                            <li><strong>Visione:</strong> Paolo Pejrone & Gardner</li>
+                            <li><strong>Governance:</strong> Strategie PNRR</li>
+                        </ul>
+                    </div>
+                </aside>
+
             </div>
         </section>
     </main>
 
     <footer style="margin-top: 100px; padding: 50px 0; border-top: 1px solid #eee;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 0.7rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.7rem; color: #999; text-transform: uppercase;">
             <div>© 2026 Antonino Sinicropi — Architetto Ph.D.</div>
-            <div>Ordine degli Architetti di Cuneo — n. 2045</div>
+            <div>Focus: Neuro-Inclusion & School Governance</div>
         </div>
     </footer>
 
