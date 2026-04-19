@@ -7,21 +7,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style-home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Integrazioni CSS specifiche */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .input-group { margin-bottom: 20px; }
+        .input-group input, .input-group textarea {
+            width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd;
+            font-family: 'Montserrat'; font-size: 0.8rem; outline: none; background: transparent;
+        }
+        .submit-btn {
+            background: #111; color: #fff; padding: 15px 30px; border: none; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; transition: 0.3s;
+        }
+        .submit-btn:hover { opacity: 0.8; }
+
+        /* Stile Bottoni Network */
+        .network-buttons { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 25px; }
+        .network-btn {
+            text-decoration: none; color: #111; font-size: 0.7rem; border: 1px solid #111;
+            padding: 10px 18px; display: inline-flex; align-items: center; gap: 8px;
+            text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+        }
+        .network-btn i { font-size: 0.9rem; }
+        .network-btn:hover { background: #111; color: #fff; }
+
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .grid-profile { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
     <div id="menu-overlay" onclick="toggleMenu()"></div>
 
     <header>
-        <div class="logo">ANTONINO SINICROPI</div>
+        <div class="logo">
+            <a href="home.html" style="text-decoration:none; color:black;">ANTONINO SINICROPI</a>
+        </div>
         <nav class="nav-desktop">
-            <a href="#profilo">Profilo</a>
+            <a href="#profile">Profilo</a>
             <a href="cv.html">Curriculum</a>
-            <a href="biografia.html">Biografia</a>
+            <a href="biography.html">Biografia</a>
             <a href="portfolio.html">Portfolio</a>
-            <a href="#competenze">Competenze</a>
-            <a href="#ricerca">Ricerca</a>
-            <a href="#contatti">Contatti</a>
+            <a href="#expertise">Competenze</a>
+            <a href="#research">Ricerca</a>
+            <a href="#contact">Contatti</a>
         </nav>
         <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Apri menu">
             <span></span><span></span><span></span>
@@ -30,42 +61,42 @@
 
     <div id="mobile-sidebar" class="sidebar">
         <nav>
-            <a href="#profilo" onclick="toggleMenu()">Profilo</a>
+            <a href="#profile" onclick="toggleMenu()">Profilo</a>
             <a href="cv.html" onclick="toggleMenu()">Curriculum</a>
-            <a href="biografia.html" onclick="toggleMenu()">Biografia</a>
+            <a href="biography.html" onclick="toggleMenu()">Biografia</a>
             <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
-            <a href="#competenze" onclick="toggleMenu()">Competenze</a>
-            <a href="#ricerca" onclick="toggleMenu()">Ricerca</a>
-            <a href="#contatti" onclick="toggleMenu()">Contatti</a>
+            <a href="#expertise" onclick="toggleMenu()">Competenze</a>
+            <a href="#research" onclick="toggleMenu()">Ricerca</a>
+            <a href="#contact" onclick="toggleMenu()">Contatti</a>
         </nav>
     </div>
 
-    <section id="visione" class="hero-section">
+    <section id="vision" class="hero-section">
         <div class="hero-overlay">
             <div class="hero-text fade-in">
                 <h2>L'Anima Integrata</h2>
-                <p>Sintesi tra Design Biodinamico, Pedagogia UDL e Governance Strategica.</p>
+                <p>Una Sintesi tra Progettazione Biodinamica, Pedagogia UDL e Governance Strategica.</p>
             </div>
         </div>
     </section>
 
-    <section id="profilo" class="content-section">
+    <section id="profile" class="content-section">
         <div class="container grid-profile">
             <div class="profile-text">
                 <span class="label">Visione Professionale</span>
-                <h3>Architettura Olistica <br>& Design Human-Centered</h3>
+                <h3>Architettura Olistica <br>& Human-Centered Design</h3>
                 <p>
-                    Specialista nella rigenerazione di "Luoghi della Salute", fondo la precisione tecnica del Restauro e del NZEB Design con la profondità metodologica dell'Universal Design for Learning (UDL).
+                    Specializzato nella rigenerazione di "Healing Places" (Luoghi di Cura) e ambienti di apprendimento inclusivi, la mia pratica fonde la precisione tecnica del <strong>Restauro</strong> e della <strong>Progettazione NZEB</strong> con la profondità metodologica dell'<strong>Universal Design for Learning (UDL)</strong>.
                 </p>
                 <p>
-                    Trasformo lo spazio fisico in un dispositivo attivo per il benessere, applicando i principi del design biodinamico per abbattere barriere sensoriali e cognitive, operando come ponte tra istituzioni, scuola e territorio.
+                    Trasformo lo spazio fisico in un dispositivo attivo per il benessere, applicando i principi della progettazione biodinamica per abbattere non solo le barriere fisiche, ma anche quelle sensoriali e cognitive, operando come ponte tra istituzioni, istruzione e territorio.
                 </p>
             </div>
 
             <div class="profile-stats">
                 <div class="stat-item">
                     <span class="stat-number">Ph.D.</span>
-                    <span class="stat-desc">Dottorato in Urban Regeneration & Sicurezza</span>
+                    <span class="stat-desc">Rigenerazione Urbana & Sicurezza</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">UDL</span>
@@ -73,37 +104,37 @@
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">STRATEGY</span>
-                    <span class="stat-desc">Governance PNRR e Leadership Istituzionale</span>
+                    <span class="stat-desc">Governance PNRR & Leadership Istituzionale</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="competenze" class="content-section grey-bg" style="background-color: #f9f9f9;">
+    <section id="expertise" class="content-section grey-bg" style="background-color: #f9f9f9;">
         <div class="container grid-profile">
             <div class="profile-text">
                 <span class="label">Ambiti di Intervento</span>
-                <h3>Sintesi tra Tecnica <br>e Funzione Strategica</h3>
+                <h3>Sintesi di Tecnica <br>& Funzione Strategica</h3>
                 <p>
-                    La mia attività si muove su direttrici interconnesse: la **rigenerazione urbana** come strumento di salute pubblica, la **pedagogia dello spazio** per l'inclusione e la **gestione tecnica** di processi edilizi complessi.
+                    Il mio lavoro opera su assi interconnessi: la <strong>rigenerazione urbana</strong> come strumento di salute pubblica, la <strong>pedagogia spaziale</strong> per l'inclusione e la <strong>gestione tecnica</strong> di processi edilizi complessi.
                 </p>
                 <p>
-                    Dalla progettazione esecutiva BIM alla gestione di bandi ministeriali (D.M. 170/2022), ogni intervento è finalizzato alla resilienza degli insediamenti e alla salute collettiva.
+                    Dalla progettazione esecutiva BIM alla gestione di finanziamenti ministeriali nazionali, ogni intervento è finalizzato alla resilienza degli insediamenti umani e alla salute collettiva.
                 </p>
             </div>
 
             <div class="profile-stats">
                 <div class="stat-item">
-                    <span class="stat-number">RIGENERAZIONE E RESILIENZA</span>
-                    <span class="stat-desc">Healthy Streets e Design Biodinamico.</span>
+                    <span class="stat-number">REGEN</span>
+                    <span class="stat-desc">Healthy Streets e Progettazione Biodinamica.</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">INCLUSIONE</span>
-                    <span class="stat-desc">UDL Architettonico e neurodiversità.</span>
+                    <span class="stat-number">INCLUSION</span>
+                    <span class="stat-desc">UDL Architettonico e Neurodiversità.</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">GOVERNANCE</span>
-                    <span class="stat-desc">RUP Crowdfunding e coordinamento PNRR.</span>
+                    <span class="stat-desc">Progettazione Partecipata & Pianificazione Strategica PNRR.</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">DIGITAL</span>
@@ -113,23 +144,23 @@
         </div>
     </section>
 
-    <section id="ricerca" class="content-section">
+    <section id="research" class="content-section">
         <div class="container grid-profile">
             <div class="profile-text">
                 <span class="label">Ricerca & Progettazione Internazionale</span>
                 <h3>Dalla Northeastern University <br>alla Ricerca Springer</h3>
                 <p>
-                    Già **Visiting Scholar presso la Northeastern University di Boston**, dove ho approfondito modelli di rigenerazione urbana "Human-Centered" in contesti metropolitani ad alta complessità.
+                    Già <strong>Visiting Scholar presso la Northeastern University di Boston</strong>, dove ho sviluppato modelli di rigenerazione urbana "Human-Centered" per contesti metropolitani ad alta complessità.
                 </p>
                 <p>
-                    Autore della pubblicazione scientifica *"Healthy Cities with Healthy Streets"* (Springer, 2022) e coordinatore scientifico per simposi multidisciplinari internazionali.
+                    Autore della pubblicazione scientifica <em>"Healthy Cities with Healthy Streets"</em> (Springer, 2022) e coordinatore scientifico per simposi multidisciplinari internazionali.
                 </p>
             </div>
 
             <div class="profile-stats">
                 <div class="stat-item">
                     <span class="stat-number">BOSTON</span>
-                    <span class="stat-desc">Visiting Scholar alla Northeastern University.</span>
+                    <span class="stat-desc">Visiting Scholar presso Northeastern University.</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">SPRINGER</span>
@@ -137,48 +168,61 @@
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">ADMM</span>
-                    <span class="stat-desc">Specializzazione Sostegno con valutazione 30/30.</span>
+                    <span class="stat-desc">Specializzazione in Inclusione (Votazione: 30/30).</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contatti" class="contact-section" style="padding: 100px 10%;">
-        <div class="container">
-            <div class="contact-header">
-                <span class="label">Connessioni</span>
-                <h3>Dialoghi su Progetto, <br>Ricerca e Inclusione</h3>
+    <section id="contact" class="container" style="padding: 100px 20px;">
+        <span class="label">Connessioni</span>
+        <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 50px;">Contatto Strategico</h2>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p style="font-size: 1.1rem; line-height: 1.8; font-weight: 300; margin-bottom: 30px;">
+                    Per collaborazioni istituzionali, consulenze strategiche su progetti PNRR o approfondimenti sulla neurodiversità spaziale, utilizza il modulo di contatto dedicato.
+                </p>
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 30px;">
+                    <p>Antonino Sinicropi — Architetto Ph.D.</p>
+                </div>
+
+                <div class="network-buttons">
+                    <a href="https://www.linkedin.com/in/antonino-sinicropi/" target="_blank" class="network-btn">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://orcid.org/0000-0002-3113-5926" target="_blank" class="network-btn">
+                        <i class="fab fa-orcid"></i> ORCID
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Antonino-Sinicropi" target="_blank" class="network-btn">
+                        <i class="fab fa-researchgate"></i> ResearchGate
+                    </a>
+                </div>
             </div>
 
-            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
-                <div class="contact-item">
-                    <p style="font-weight: 700; color: #111; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 20px;">Direct Contact</p>
-                    <a href="mailto:architettosinicropi@gmail.com" style="font-size: 1.5rem; color: #111; text-decoration: none; font-weight: 300;">architettosinicropi@gmail.com</a>
-                    <div style="margin-top: 20px; color: #555;">
-                        <p><i class="fas fa-phone-alt"></i> +39 329 4272578</p>
-                        <p><i class="fas fa-envelope-open-text"></i> PEC: antoninosinicropi@pec.it</p>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xgoryrza" method="POST">
+                    <div class="input-group"><input type="text" name="name" placeholder="NOME E COGNOME" required></div>
+                    <div class="input-group"><input type="email" name="email" placeholder="INDIRIZZO EMAIL" required></div>
+                    <div class="input-group"><input type="text" name="subject" placeholder="OGGETTO"></div>
+                    <div class="input-group"><textarea name="message" placeholder="IL TUO MESSAGGIO" rows="5" required></textarea></div>
+                    
+                    <div style="font-size: 0.65rem; color: #bbb; line-height: 1.4; margin-bottom: 20px;">
+                        <em>In attesa della pubblicazione della Privacy Policy tramite Iubenda. Inviando il modulo, acconsenti al trattamento dei dati al solo scopo di ricevere risposta.</em>
                     </div>
-                </div>
-                
-                <div class="contact-item">
-                    <p style="font-weight: 700; color: #111; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 20px;">Network</p>
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <a href="https://www.linkedin.com/in/antoninosinicropi/" target="_blank" style="text-decoration:none; color:#555;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://orcid.org/0000-0002-9623-2986" target="_blank" style="text-decoration:none; color:#555;"><i class="fab fa-orcid"></i> ORCID ID</a>
-                        <a href="https://www.researchgate.net/profile/Antonino-Sinicropi" target="_blank" style="text-decoration:none; color:#555;"><i class="fab fa-researchgate"></i> ResearchGate</a>
-                    </div>
-                </div>
+                    <button type="submit" class="submit-btn">Invia Messaggio</button>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container" style="padding: 50px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div class="container" style="padding: 50px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
             <div class="order-info" style="font-size: 0.75rem; color: #9CA3AF; line-height: 1.6;">
                 <p>Iscritto all'Ordine degli Architetti, P.P.C. della Provincia di Cuneo</p>
                 <p>Albo Sez. A — n. 2045 | Specializzazione ADMM 30/30</p>
             </div>
-            <div class="legal-info" style="font-size: 0.75rem; color: #9CA3AF;">
+            <div class="legal-info" style="font-size: 0.75rem; color: #9CA3AF; text-align: right;">
                 <p>© 2026 ANTONINO SINICROPI — ARCHITETTO Ph.D.</p>
             </div>
         </div>

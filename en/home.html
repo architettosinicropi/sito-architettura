@@ -1,3 +1,8 @@
+Hai ragione, mi scuso. Nel tentativo di rendere il codice più leggibile ho sintetizzato eccessivamente quelle parti.
+
+Ecco la **versione integrale e definitiva** della Home Page. Ho ripristinato tutti i contenuti delle sezioni **Expertise** e **Research**, mantenendo le integrazioni per i moduli di contatto, l'endpoint di Formspree e i tre bottoni social (**LinkedIn, ORCID, ResearchGate**).
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +12,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style-home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Integrazioni CSS specifiche */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .input-group { margin-bottom: 20px; }
+        .input-group input, .input-group textarea {
+            width: 100%; padding: 15px 0; border: none; border-bottom: 1px solid #ddd;
+            font-family: 'Montserrat'; font-size: 0.8rem; outline: none; background: transparent;
+        }
+        .submit-btn {
+            background: #111; color: #fff; padding: 15px 30px; border: none; cursor: pointer;
+            text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; transition: 0.3s;
+        }
+        .submit-btn:hover { opacity: 0.8; }
+
+        /* Stile Bottoni Network */
+        .network-buttons { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 25px; }
+        .network-btn {
+            text-decoration: none; color: #111; font-size: 0.7rem; border: 1px solid #111;
+            padding: 10px 18px; display: inline-flex; align-items: center; gap: 8px;
+            text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+        }
+        .network-btn i { font-size: 0.9rem; }
+        .network-btn:hover { background: #111; color: #fff; }
+
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .grid-profile { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
@@ -145,42 +179,55 @@
         </div>
     </section>
 
-    <section id="contact" class="contact-section" style="padding: 100px 10%;">
-        <div class="container">
-            <div class="contact-header">
-                <span class="label">Connections</span>
-                <h3>Dialogues on Design, <br>Research, and Inclusion</h3>
+    <section id="contact" class="container" style="padding: 100px 20px;">
+        <span class="label">Connections</span>
+        <h2 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 50px;">Strategic Contact</h2>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p style="font-size: 1.1rem; line-height: 1.8; font-weight: 300; margin-bottom: 30px;">
+                    For institutional collaborations, strategic consultancy on PNRR projects, or further inquiries regarding spatial neurodiversity, please use the dedicated contact form.
+                </p>
+                <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #888; margin-bottom: 30px;">
+                    <p>Antonino Sinicropi — Architect Ph.D.</p>
+                </div>
+
+                <div class="network-buttons">
+                    <a href="https://www.linkedin.com/in/antonino-sinicropi/" target="_blank" class="network-btn">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://orcid.org/0000-0002-3113-5926" target="_blank" class="network-btn">
+                        <i class="fab fa-orcid"></i> ORCID
+                    </a>
+                    <a href="https://www.researchgate.net/profile/Antonino-Sinicropi" target="_blank" class="network-btn">
+                        <i class="fab fa-researchgate"></i> ResearchGate
+                    </a>
+                </div>
             </div>
 
-            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
-                <div class="contact-item">
-                    <p style="font-weight: 700; color: #111; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 20px;">Direct Contact</p>
-                    <a href="mailto:architettosinicropi@gmail.com" style="font-size: 1.5rem; color: #111; text-decoration: none; font-weight: 300;">architettosinicropi@gmail.com</a>
-                    <div style="margin-top: 20px; color: #555;">
-                        <p><i class="fas fa-phone-alt"></i> +39 329 4272578</p>
-                        <p><i class="fas fa-envelope-open-text"></i> PEC: antoninosinicropi@pec.it</p>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xgoryrza" method="POST">
+                    <div class="input-group"><input type="text" name="name" placeholder="FULL NAME" required></div>
+                    <div class="input-group"><input type="email" name="email" placeholder="EMAIL ADDRESS" required></div>
+                    <div class="input-group"><input type="text" name="subject" placeholder="SUBJECT"></div>
+                    <div class="input-group"><textarea name="message" placeholder="YOUR MESSAGE" rows="5" required></textarea></div>
+                    
+                    <div style="font-size: 0.65rem; color: #bbb; line-height: 1.4; margin-bottom: 20px;">
+                        <em>Privacy Policy pending publication via Iubenda. By submitting, you consent to data processing for the purpose of a response.</em>
                     </div>
-                </div>
-                
-                <div class="contact-item">
-                    <p style="font-weight: 700; color: #111; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 20px;">Network</p>
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <a href="https://www.linkedin.com/in/antoninosinicropi/" target="_blank" style="text-decoration:none; color:#555;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="https://orcid.org/0000-0002-9623-2986" target="_blank" style="text-decoration:none; color:#555;"><i class="fab fa-orcid"></i> ORCID ID</a>
-                        <a href="https://www.researchgate.net/profile/Antonino-Sinicropi" target="_blank" style="text-decoration:none; color:#555;"><i class="fab fa-researchgate"></i> ResearchGate</a>
-                    </div>
-                </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container" style="padding: 50px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div class="container" style="padding: 50px 0; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
             <div class="order-info" style="font-size: 0.75rem; color: #9CA3AF; line-height: 1.6;">
                 <p>Member of the Order of Architects, P.P.C. of the Province of Cuneo</p>
                 <p>Albo Sez. A — n. 2045 | ADMM Specialization 30/30</p>
             </div>
-            <div class="legal-info" style="font-size: 0.75rem; color: #9CA3AF;">
+            <div class="legal-info" style="font-size: 0.75rem; color: #9CA3AF; text-align: right;">
                 <p>© 2026 ANTONINO SINICROPI — ARCHITECT Ph.D.</p>
             </div>
         </div>
@@ -194,3 +241,4 @@
     </script>
 </body>
 </html>
+```
