@@ -3,124 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biography | Antonino Sinicropi</title>
+    <title>Biography | Antonino Sinicropi | Architect Ph.D. & UDL Expert</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style-home.css">
     <style>
-        :root { --main-black: #111; --text-gray: #333; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background: #fff; color: var(--main-black); }
+        :root { 
+            --main-black: #111; 
+            --text-gray: #333; 
+            --light-border: #eee;
+            --sidebar-bg: #fcfcfc;
+        }
         
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Layout spacing */
-        main { padding-top: 100px; }
+        * { box-sizing: border-box; }
 
-        .bio-header { margin-bottom: 60px; }
-        .hero-title { font-size: clamp(2rem, 7vw, 3rem); font-weight: 300; line-height: 1.2; margin: 20px 0; }
-
-        /* Responsive Main Layout */
-        .bio-grid { 
-            display: grid; 
-            grid-template-columns: 2fr 1fr; 
-            gap: 60px; 
-            align-items: start; 
+        body { 
+            margin: 0; 
+            font-family: 'Montserrat', sans-serif; 
+            background: #fff; 
+            color: var(--main-black); 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .biography-content { line-height: 1.8; font-weight: 300; text-align: justify; }
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 25px; 
+        }
+
+        /* Header & Nav */
+        header { 
+            padding: 25px 0; 
+            border-bottom: 1px solid var(--light-border);
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.98);
+            z-index: 100;
+        }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-weight: 700; letter-spacing: 2px; text-decoration: none; color: inherit; font-size: 0.85rem; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: inherit; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero Section */
+        main { padding: 60px 0; }
+        .bio-header { margin-bottom: 50px; }
+        .label { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 3px; color: #999; display: block; margin-bottom: 10px; }
+        .hero-title { 
+            font-size: clamp(1.8rem, 6vw, 3.2rem); 
+            font-weight: 300; 
+            line-height: 1.15; 
+            margin: 0; 
+        }
+
+        /* Grid System */
+        .bio-grid { 
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Biography Content */
+        .biography-content { 
+            order: 2;
+            font-weight: 300; 
+            text-align: justify; 
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
         .biography-content p { margin-bottom: 25px; }
 
-        /* Sidebar - Sticky on Desktop */
-        aside { position: sticky; top: 120px; }
-        .sidebar-box { background-color: #f9f9f9; padding: 40px; border-left: 2px solid var(--main-black); }
-        
-        .bio-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: 0.5s; border-bottom: 2px solid var(--main-black); margin-bottom: 30px; }
-        .img-inline { margin: 40px 0; }
-        .caption { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+        /* Sidebar Box */
+        aside { order: 1; }
+        .sidebar-box { 
+            background-color: var(--sidebar-bg); 
+            padding: 30px; 
+            border: 1px solid var(--light-border);
+        }
+        .sidebar-title { 
+            text-transform: uppercase; 
+            font-size: 0.7rem; 
+            letter-spacing: 2px; 
+            margin: 0 0 20px 0;
+            color: #777;
+        }
+        .sidebar-list { list-style: none; padding: 0; margin: 0; }
+        .sidebar-list li { 
+            font-size: 0.8rem; 
+            padding: 10px 0; 
+            border-bottom: 1px solid var(--light-border);
+            display: flex;
+            justify-content: space-between;
+        }
+        .sidebar-list li:last-child { border-bottom: none; }
 
-        /* MOBILE MEDIA QUERIES */
-        @media (max-width: 992px) {
-            .bio-grid { grid-template-columns: 1fr; gap: 40px; }
-            aside { position: relative; top: 0; order: -1; } /* Portrait moves above text on mobile */
-            .hero-title { font-size: 2.2rem; }
-            .biography-content { text-align: left; }
-            .sidebar-box { border-left: none; border-top: 2px solid var(--main-black); padding: 30px 0; background: transparent; }
+        /* Desktop Adjustments */
+        @media (min-width: 992px) {
+            main { padding: 100px 0; }
+            .bio-grid { 
+                flex-direction: row; 
+                gap: 80px; 
+            }
+            .biography-content { order: 1; flex: 2; }
+            aside { order: 2; flex: 1; position: sticky; top: 120px; height: fit-content; }
+            .sidebar-box { border: none; border-left: 1px solid var(--main-black); background: transparent; padding: 0 0 0 40px; }
+            .nav-links a { margin-left: 40px; }
         }
 
-        @media (max-width: 600px) {
-            main { padding-top: 80px; }
-            .hero-title { font-size: 1.8rem; }
+        /* Footer */
+        footer { 
+            margin-top: 80px; 
+            padding: 40px 0; 
+            border-top: 1px solid var(--light-border); 
+            background: #fafafa;
+        }
+        .footer-content { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            font-size: 0.65rem; 
+            color: #888; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content { flex-direction: row; justify-content: space-between; text-align: left; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="home.html" style="text-decoration:none; color:inherit;">ANTONINO SINICROPI</a></div>
-        <nav class="nav-desktop">
-            <a href="home.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="home.html#contatti">Contact</a>
-        </nav>
+        <div class="container nav-flex">
+            <div class="logo"><a href="home.html">ANTONINO SINICROPI</a></div>
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="home.html#contatti">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="container">
             <div class="bio-header">
-                <span class="label">Intellectual Journey</span>
+                <span class="label">The Intellectual Journey</span>
                 <h1 class="hero-title">A Harmonic Synthesis of <br><strong>Space, History, and Soul</strong></h1>
             </div>
 
             <div class="bio-grid">
-                
-                <div class="biography-content">
+                <article class="biography-content">
                     <p>
-                        The professional path of architect Antonino Sinicropi transcends mere construction, evolving into a philosophical and technical inquiry into the quality of living. Rooted in the <strong>PAU Department of the Mediterranea University</strong>, his work has developed into a holistic vision where heritage restoration and urban regeneration converge toward a single goal.
-                    </p>
-
-
-                    <p>
-                        His connection to historical memory is epitomized by the prestigious intervention at the <strong>Cathedral of Gerace</strong>. Collaborating with the Diocese of Locri-Gerace and renowned restorer <strong>Giuseppe Mantella</strong>, Sinicropi explored new frontiers of conservation through 3D surveys: a bridge between traditional craftsmanship and digital precision.
+                        The professional journey of architect Antonino Sinicropi extends beyond architectural practice, establishing itself as a philosophical and technical inquiry into the quality of living. Rooted in the <strong>PAU Department of the Mediterranea University</strong>, his work has evolved into a holistic vision where heritage restoration and urban regeneration converge toward a singular objective.
                     </p>
 
                     <p>
-                        His scientific research for <strong>Springer</strong>, <em>"Healthy Cities with Healthy Streets"</em>, redefines urban infrastructure as a "Third Place." His collaboration with architect <strong>Antonio Taccone</strong> and his tenure as a Visiting Scholar in <strong>Boston</strong> have allowed him to adapt international Healthy Streets models into operational strategies.
-                    </p>
-
-                       </div> 
-                    <p>
-                        Influenced by masters like <strong>Paolo Pejrone</strong>, his approach to greenery is structural: a "cultured garden" where biodiversity integrates with NZEB sustainability. Simultaneously, inspired by the <strong>Isabella Stewart Gardner Museum</strong>, Sinicropi interprets museum spaces as total works of art—a "courtyard of the soul."
+                        His connection with historical memory is exemplified by the prestigious intervention at the <strong>Cathedral of Gerace</strong>. The collaboration with the Diocese of Locri-Gerace and restorer <strong>Giuseppe Mantella</strong> allowed for the exploration of new frontiers in conservation through 3D surveys: a bridge between artisanal wisdom and digital precision.
                     </p>
 
                     <p>
-                        This intellectual complexity is further enriched by a profound partnership with architect <strong>Antonello Monaco</strong>. Within <a href="https://www.isamweb.eu/" target="_blank" style="color: inherit; text-decoration: underline;"><strong>ISAM</strong></a> (Institute for Mediterranean Architecture), their relationship has transcended the academic dimension, evolving into a bond of deep friendship and mutual esteem—an elective affinity between the Roman and Reggina schools of thought that has fostered a symbiotic vision of contemporary design.
+                        His scientific contribution for <strong>Springer</strong>, <em>"Healthy Cities with Healthy Streets"</em>, defines the street as a "Third Place." The collaboration with architect <strong>Antonio Taccone</strong> and his experience as a Visiting Scholar in <strong>Boston</strong> have enabled the translation of international Healthy Streets models into operational strategies.
                     </p>
-    </div>
+
                     <p>
-                        His commitment to inclusion finds fulfillment in <strong>UDL</strong> specialization, applying special pedagogy to spatial neurodiversity. 
-                        <a href="spatial-neurodiversity.html" style="color:#111; font-weight:700;">Explore the UDL vision →</a>
+                        Influenced by masters such as <strong>Paolo Pejrone</strong>, his approach to landscape is structural: a "cultured garden" where biodiversity integrates NZEB sustainability. Parallelly, drawing inspiration from the <strong>Isabella Stewart Gardner Museum</strong>, Sinicropi interprets the museum space as a total work of art—a "courtyard of the soul."
                     </p>
-                </div>
+
+                    <p>
+                        This intellectual complexity is fueled by a profound partnership with professor-architect <strong>Antonello Monaco</strong>. Within <strong>ISAM</strong> (Institute for Mediterranean Architecture), their relationship has transcended the academic dimension, consolidating into a bond of deep friendship and mutual esteem: an elective affinity that has fostered a symbiotic vision of contemporary design.
+                    </p>
+
+                    <p>
+                        His commitment to inclusion finds fulfillment in the <strong>UDL</strong> (Universal Design for Learning) specialization, applying special pedagogy to spatial neurodiversity. 
+                        <br><br>
+                        <a href="neurodiversita-spaziale.html" style="color:#111; font-weight:700; text-decoration: none; border-bottom: 2px solid #111; padding-bottom: 3px;">Learn more about the UDL vision →</a>
+                    </p>
+                </article>
 
                 <aside>
-                    <img src="../img/ritratto-antonino.gif" alt="Antonino Sinicropi" class="bio-img">
                     <div class="sidebar-box">
-                        <h4 style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 20px;">Overview</h4>
-                        <ul style="list-style: none; padding: 0; font-size: 0.8rem; line-height: 2;">
-                            <li><strong>Digital Heritage:</strong> Gerace Cathedral</li>
-                            <li><strong>Urban Theory:</strong> Healthy Streets</li>
-                            <li><strong>Legacy:</strong> ISAM & Antonello Monaco</li>
-                            <li><strong>Vision:</strong> Paolo Pejrone & Gardner</li>
-                            <li><strong>Governance:</strong> PNRR Strategies</li>
+                        <h4 class="sidebar-title">Focus & Legacy</h4>
+                        <ul class="sidebar-list">
+                            <li><span>Digital Heritage</span> <strong>Gerace</strong></li>
+                            <li><span>Urban Theory</span> <strong>Healthy Streets</strong></li>
+                            <li><span>Legacy</span> <strong>ISAM / Monaco</strong></li>
+                            <li><span>Vision</span> <strong>Pejrone / Gardner</strong></li>
+                            <li><span>Governance</span> <strong>PNRR Strategies</strong></li>
                         </ul>
                     </div>
                 </aside>
-
             </div>
         </section>
     </main>
 
-    <footer style="margin-top: 100px; padding: 50px 0; border-top: 1px solid #eee;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.7rem; color: #999; text-transform: uppercase;">
+    <footer>
+        <div class="container footer-content">
             <div>© 2026 Antonino Sinicropi — Architect Ph.D.</div>
             <div>Focus: Neuro-Inclusion & School Governance</div>
         </div>
