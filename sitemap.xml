@@ -1,23 +1,114 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.tuosito.it/</loc>
-    <lastmod>2026-04-26</lastmod>
-  </url>
-  <url>
-    <loc>https://www.tuosito.it/contatti</loc>
-    <lastmod>2026-04-26</lastmod>
-  </url>
-      <loc>https://www.tuosito.it/contatti</loc>
-    <lastmod>2026-04-26</lastmod>
-  </url>
-      <loc>https://www.tuosito.it/contatti</loc>
-    <lastmod>2026-04-26</lastmod>
-  </url>
-      <loc>https://www.tuosito.it/contatti</loc>
-    <lastmod>2026-04-26</lastmod>
-  </url>
-      <loc>https://www.tuosito.it/contatti</loc>
-    <lastmod>2026-04-26</lastmod>
-  </url>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://www.antoninosinicropi.it/</loc>
+	<lastmod>2026-04-26T11:03:23+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/home.html</loc>
+	<lastmod>2026-04-26T11:03:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/home.html</loc>
+	<lastmod>2026-04-26T11:03:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/cv.html</loc>
+	<lastmod>2026-04-26T11:03:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/biografia.html</loc>
+	<lastmod>2026-04-26T11:03:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/portfolio.html</loc>
+	<lastmod>2026-04-26T11:03:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/assets/CV_Antonino_Sinicropi_ITA.pdf</loc>
+	<lastmod>2026-04-26T11:03:24+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/cv.html</loc>
+	<lastmod>2026-04-26T11:03:25+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/biography.html</loc>
+	<lastmod>2026-04-26T11:03:25+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/portfolio.html</loc>
+	<lastmod>2026-04-26T11:03:25+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/neurodiversita-spaziale.html</loc>
+	<lastmod>2026-04-26T11:03:26+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/progetti/nzeb-dettaglio.html</loc>
+	<lastmod>2026-04-26T11:03:27+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/progetti/hs-dettaglio.html</loc>
+	<lastmod>2026-04-26T11:03:27+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/progetti/udl-dettaglio.html</loc>
+	<lastmod>2026-04-26T11:03:27+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/progetti/restore-dettaglio.html</loc>
+	<lastmod>2026-04-26T11:03:27+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/it/progetti/partecipazione-dettaglio.html</loc>
+	<lastmod>2026-04-26T11:03:27+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/assets/CV_Antonino_Sinicropi_ENG.pdf</loc>
+	<lastmod>2026-04-26T11:03:28+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/projects/nzeb-detail.html</loc>
+	<lastmod>2026-04-26T11:03:38+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/projects/hs-detail.html</loc>
+	<lastmod>2026-04-26T11:03:38+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/projects/udl-detail.html</loc>
+	<lastmod>2026-04-26T11:03:38+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/projects/restore-detail.html</loc>
+	<lastmod>2026-04-26T11:03:38+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://www.antoninosinicropi.it/en/projects/partecipatory-detail.html</loc>
+	<lastmod>2026-04-26T11:03:38+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
 </urlset>
