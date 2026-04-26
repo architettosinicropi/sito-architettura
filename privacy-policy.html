@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Arch. Antonino Sinicropi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 0 auto; padding: 40px 20px; background-color: #f4f7f9; }
+        .container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        
+        /* Switcher Lingua */
+        .lang-switcher { text-align: right; margin-bottom: 20px; }
+        .lang-btn { background: #e0e0e0; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 12px; transition: 0.3s; }
+        .lang-btn.active { background: #007bff; color: white; }
+        
+        h1 { color: #0056b3; border-bottom: 2px solid #eee; padding-bottom: 10px; font-size: 24px; }
+        h2 { color: #333; margin-top: 25px; font-size: 18px; border-left: 4px solid #007bff; padding-left: 15px; }
+        p, li { font-size: 14px; color: #555; }
+        
+        /* Gestione visibilità lingue */
+        .lang-en { display: none; }
+        .footer-note { margin-top: 40px; font-size: 11px; color: #bbb; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-switcher">
+        <button id="btn-it" class="lang-btn active" onclick="setLanguage('it')">ITALIANO</button>
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">ENGLISH</button>
+    </div>
+
+    <div id="content-it" class="lang-it">
+        <h1>Informativa sulla Privacy</h1>
+        <p>Ai sensi del Regolamento UE 2016/679 (GDPR), questa pagina descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito web professionale dell'Arch. Antonino Sinicropi.</p>
+
+        <h2>1. Titolare del Trattamento</h2>
+        <p>Il Titolare del trattamento è l'<strong>Arch. Antonino Sinicropi, Ph.D.</strong>.<br>
+        Contatti: <a href="mailto:antoninosinicropi52@gmail.com">antoninosinicropi52@gmail.com</a> | PEC: <a href="mailto:antoninosinicropi@pec.it">antoninosinicropi@pec.it</a></p>
+
+        <h2>2. Dati Raccolti</h2>
+        <p>Utilizziamo <strong>Google Analytics 4 (G-CDK82JBQ2Z)</strong> per raccogliere dati statistici anonimizzati sulle visite. I dati forniti volontariamente tramite moduli di contatto sono usati esclusivamente per rispondere alle richieste professionali.</p>
+
+        <h2>3. Base Giuridica</h2>
+        <p>Il trattamento si basa sul consenso dell'utente espresso tramite il banner cookie e sul legittimo interesse professionale.</p>
+
+        <h2>4. Diritti dell'Interessato</h2>
+        <p>È possibile richiedere l'accesso, la rettifica o la cancellazione dei dati in qualsiasi momento scrivendo ai recapiti sopra indicati.</p>
+    </div>
+
+    <div id="content-en" class="lang-en">
+        <h1>Privacy Policy</h1>
+        <p>In accordance with EU Regulation 2016/679 (GDPR), this page describes how personal data of users visiting the website of Arch. Antonino Sinicropi is processed.</p>
+
+        <h2>1. Data Controller</h2>
+        <p>The Data Controller is <strong>Arch. Antonino Sinicropi, Ph.D.</strong>.<br>
+        Contacts: <a href="mailto:antoninosinicropi52@gmail.com">antoninosinicropi52@gmail.com</a> | PEC: <a href="mailto:antoninosinicropi@pec.it">antoninosinicropi@pec.it</a></p>
+
+        <h2>2. Data Collected</h2>
+        <p>We use <strong>Google Analytics 4 (G-CDK82JBQ2Z)</strong> to collect anonymous statistical data. Data provided voluntarily via contact forms is used solely to respond to professional inquiries.</p>
+
+        <h2>3. Legal Basis</h2>
+        <p>Processing is based on user consent provided via the cookie banner and on legitimate professional interest.</p>
+
+        <h2>4. Your Rights</h2>
+        <p>You may request access, rectification, or deletion of your data at any time by writing to the contacts provided above.</p>
+    </div>
+
+    <div class="footer-note">
+        Last Update: April 2026 | Arch. Antonino Sinicropi Professional Site
+    </div>
+</div>
+
+<script>
+    function setLanguage(lang) {
+        const itContent = document.getElementById('content-it');
+        const enContent = document.getElementById('content-en');
+        const btnIt = document.getElementById('btn-it');
+        const btnEn = document.getElementById('btn-en');
+
+        if (lang === 'it') {
+            itContent.style.display = 'block';
+            enContent.style.display = 'none';
+            btnIt.classList.add('active');
+            btnEn.classList.remove('active');
+        } else {
+            itContent.style.display = 'none';
+            enContent.style.display = 'block';
+            btnEn.classList.add('active');
+            btnIt.classList.remove('active');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -216,10 +216,17 @@
                     <div class="input-group"><input type="text" name="subject" placeholder="SUBJECT"></div>
                     <div class="input-group"><textarea name="message" placeholder="YOUR MESSAGE" rows="5" required></textarea></div>
                     
-                    <div style="font-size: 0.65rem; color: #bbb; line-height: 1.4; margin-bottom: 20px;">
-                       <a href="https://www.iubenda.com/privacy-policy/83947995" class="iubenda-black iubenda-noiframe iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div class="privacy-field-group" style="margin-bottom: 20px; text-align: left;">
+    <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-family: 'Segoe UI', Arial, sans-serif; font-size: 0.85rem; color: #555;">
+        <input type="checkbox" name="privacy_accept" required style="margin-top: 3px;">
+        <span>
+            I have read and agree to the 
+            <a href="privacy-policy.html" target="_blank" class="custom-privacy-link-en">Privacy Policy</a> 
+            in accordance with GDPR regulations.
+        </span>
+    </label>
+</div>
+<button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </div>
@@ -244,6 +251,63 @@
         }
     </script>
 
-    <a href="https://www.iubenda.com/privacy-policy/83947995" class="iubenda-black iubenda-noiframe iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+        
+<div id="cookie-banner" style="display:none; position: fixed; bottom: 0; left: 0; width: 100%; background: #1a1a1a; color: #ffffff; padding: 20px; text-align: center; z-index: 9999; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); font-family: 'Segoe UI', Arial, sans-serif; border-top: 3px solid #007bff;">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <p style="margin: 0; font-size: 14px; line-height: 1.5;">
+            This website uses technical and analytical cookies to optimize your user experience. 
+            Data processing is managed in compliance with **GDPR 679/2016**. 
+            For more information, please visit our <a href="https://www.antoninosinicropi.it/en/privacy-policy" style="color: #007bff; text-decoration: underline;">Privacy Policy</a>.
+        </p>
+        <div style="display: flex; gap: 10px;">
+            <button onclick="acceptCookies()" style="background: #007bff; color: white; border: none; padding: 10px 25px; cursor: pointer; border-radius: 4px; font-weight: bold; transition: 0.3s;">Accept All</button>
+            <button onclick="closeBanner()" style="background: transparent; color: #bbb; border: 1px solid #444; padding: 10px 20px; cursor: pointer; border-radius: 4px; transition: 0.3s;">Decline Optional</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. Check consent on page load
+    window.addEventListener('load', function() {
+        var consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        } else if (consent === 'accepted') {
+            loadAnalytics();
+        }
+    });
+
+    // 2. Action: Accept
+    function acceptCookies() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadAnalytics(); 
+    }
+
+    // 3. Action: Decline / Close
+    function closeBanner() {
+        localStorage.setItem('cookieConsent', 'declined');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    // 4. Load Google Analytics 4 (ID: G-CDK82JBQ2Z)
+    function loadAnalytics() {
+        var gaId = 'G-CDK82JBQ2Z'; 
+        
+        // Asynchronous loading of Google script
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(script);
+
+        // Configuration initialization
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId, { 'anonymize_ip': true });
+        
+        console.log('Google Analytics tracking (G-CDK82JBQ2Z) activated.');
+    }
+</script>
 </body>
 </html>

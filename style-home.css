@@ -310,3 +310,20 @@ footer .container {
 html {
   scroll-behavior: smooth;
 }
+.custom-privacy-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 2px 8px;
+    background-color: #f0f4f8;
+    border-radius: 4px;
+    border: 1px solid #dce4ec;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.custom-privacy-link:hover {
+    background-color: #007bff;
+    color: #ffffff !important;
+    border-color: #0056b3;
+}
