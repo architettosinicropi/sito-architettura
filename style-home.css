@@ -108,7 +108,7 @@ header {
 /* --- 3. SEZIONI HERO & CONTENUTI --- */
 .hero-section {
     height: 70vh;
-    background: url('img/hero-bg.png') center/cover no-repeat fixed;
+    background: url('img/hero-bg.jpg') center/cover no-repeat fixed;
     margin-top: 70px;
     position: relative;
 }
