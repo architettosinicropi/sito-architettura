@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CDK82JBQ2Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CDK82JBQ2Z');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDK82JBQ2Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CDK82JBQ2Z');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spatial Neurodiversity & School of the Future | Antonino Sinicropi</title>
+    
+    <link rel="canonical" href="https://www.antoninosinicropi.it/en/vision.html" />
+    <link rel="alternate" hreflang="en" href="https://www.antoninosinicropi.it/en/vision.html" />
+    <link rel="alternate" hreflang="it" href="https://www.antoninosinicropi.it/it/visione.html" />
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style-home.css">
+    
     <style>
         :root { --deep-black: #111; --soft-gray: #f4f4f4; --accent: #333; }
         body { background-color: #fff; color: var(--deep-black); margin: 0; font-family: 'Montserrat', sans-serif; }
@@ -24,7 +29,7 @@
         .hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 300; line-height: 1.1; letter-spacing: -2px; margin-bottom: 40px; }
         .hero-title strong { font-weight: 700; display: block; }
         
-        /* Responsive Layout */
+        /* Layout Responsivo */
         .manifesto-section { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
@@ -36,7 +41,7 @@
         .text-block { font-size: 1.1rem; line-height: 1.9; font-weight: 300; text-align: justify; }
         .text-block strong { font-weight: 400; color: #000; }
 
-        /* Responsive Images */
+        /* Immagini responsive con percorso relativo corretto */
         .vision-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: all 0.5s ease; border-bottom: 2px solid #111; }
         .vision-img:hover { filter: grayscale(0%); }
         .caption { font-size: 0.65rem; color: #888; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; font-style: normal; text-align: left;}
@@ -68,7 +73,13 @@
         .pnrr-box h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 300; margin-bottom: 30px; }
         .pnrr-box p { font-size: 1.1rem; opacity: 0.8; line-height: 1.8; max-width: 800px; margin: 0 auto 40px; }
 
-        /* MOBILE MEDIA QUERIES */
+        /* Switch lingua header */
+        .lang-switch { font-size: 0.75rem; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; }
+        .lang-switch a { text-decoration: none; color: #999; transition: color 0.3s; }
+        .lang-switch a.active { color: var(--deep-black); font-weight: 700; }
+        .lang-switch a:hover { color: var(--deep-black); }
+
+        /* MEDIA QUERIES MOBILE */
         @media (max-width: 992px) {
             .manifesto-section { grid-template-columns: 1fr; gap: 40px; }
             .vision-container { padding: 80px 20px; }
@@ -91,6 +102,10 @@
             <a href="biography.html">Biography</a>
             <a href="cv.html">Curriculum</a>
             <a href="home.html#contatti">Contact</a>
+            <span class="lang-switch">
+                <a href="../it/visione.html" onclick="localStorage.setItem('langPicked', 'it')">ITA</a> | 
+                <a href="#" class="active" onclick="localStorage.setItem('langPicked', 'en')">ENG</a>
+            </span>
         </nav>
     </header>
 
@@ -104,8 +119,8 @@
             </h1>
         </section>
 
-        <div style="margin: 60px 0;">
-            <img src="img/visione-olistica.jpg" alt="Holistic Spatial Atmosphere" class="vision-img">
+        <div style="margin: 80px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <img src="../img/vision.gif" alt="Holistic Spatial Atmosphere" class="vision-img">
             <p class="caption">Sensory Symphony: Natural light as a tool for neurological well-being.</p>
         </div>
 
@@ -129,8 +144,8 @@
         </section>
 
         <div style="margin: 80px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <img src="img/tecnica-udl.jpg" alt="UDL Technical Application" class="vision-img">
-            <p class="caption">Digital Archaeology & Performance: Integrating NZEB within historical educational heritage.</p>
+            <img src="../img/visione-architettura.jpg" alt="UDL Architectural Vision" class="vision-img">
+            <p class="caption">Architectural Synapse: Integrating layout flexibility and spatial clarity.</p>
         </div>
 
         <div class="quote-center">
@@ -157,7 +172,7 @@
         </section>
 
         <div style="margin: 100px 0;">
-            <img src="img/scuola-futuro.jpg" alt="School of the Future" class="vision-img">
+            <img src="../img/scuola-futuro.jpg" alt="School of the Future" class="vision-img">
             <p class="caption">The Regenerated School: A biodynamic organism for the community of the future.</p>
         </div>
 

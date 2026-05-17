@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CDK82JBQ2Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CDK82JBQ2Z');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDK82JBQ2Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CDK82JBQ2Z');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuro-Architettura & Visione Olistica | Antonino Sinicropi</title>
+    
+    <link rel="canonical" href="https://www.antoninosinicropi.it/it/visione.html" />
+    <link rel="alternate" hreflang="it" href="https://www.antoninosinicropi.it/it/visione.html" />
+    <link rel="alternate" hreflang="en" href="https://www.antoninosinicropi.it/en/vision.html" />
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style-home.css">
+    
     <style>
         :root { --deep-black: #111; --soft-gray: #f4f4f4; --accent: #333; }
         body { background-color: #fff; color: var(--deep-black); margin: 0; font-family: 'Montserrat', sans-serif; }
@@ -36,7 +41,7 @@
         .text-block { font-size: 1.1rem; line-height: 1.9; font-weight: 300; text-align: justify; }
         .text-block strong { font-weight: 400; color: #000; }
 
-        /* Immagini responsive */
+        /* Immagini responsive con percorso relativo corretto */
         .vision-img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: all 0.5s ease; border-bottom: 2px solid #111; }
         .vision-img:hover { filter: grayscale(0%); }
         .caption { font-size: 0.65rem; color: #888; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; font-style: normal; text-align: left;}
@@ -68,6 +73,12 @@
         .pnrr-box h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 300; margin-bottom: 30px; }
         .pnrr-box p { font-size: 1.1rem; opacity: 0.8; line-height: 1.8; max-width: 800px; margin: 0 auto 40px; }
 
+        /* Switch lingua header */
+        .lang-switch { font-size: 0.75rem; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; }
+        .lang-switch a { text-decoration: none; color: #999; transition: color 0.3s; }
+        .lang-switch a.active { color: var(--deep-black); font-weight: 700; }
+        .lang-switch a:hover { color: var(--deep-black); }
+
         /* MEDIA QUERIES MOBILE */
         @media (max-width: 992px) {
             .manifesto-section { grid-template-columns: 1fr; gap: 40px; }
@@ -91,6 +102,10 @@
             <a href="biografia.html">Biografia</a>
             <a href="cv.html">Curriculum</a>
             <a href="home.html#contatti">Contatti</a>
+            <span class="lang-switch">
+                <a href="#" class="active" onclick="localStorage.setItem('langPicked', 'it')">ITA</a> | 
+                <a href="../en/vision.html" onclick="localStorage.setItem('langPicked', 'en')">ENG</a>
+            </span>
         </nav>
     </header>
 
@@ -104,8 +119,8 @@
             </h1>
         </section>
 
-        <div style="margin: 60px 0;">
-            <img src="/img/vision.gif" alt="Atmosfera Spaziale Olistica" class="vision-img">
+        <div style="margin: 80px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <img src="../img/vision.gif" alt="Atmosfera Spaziale Olistica" class="vision-img">
             <p class="caption">Sinfonia Sensoriale: La luce naturale come dispositivo di benessere neurologico.</p>
         </div>
 
@@ -115,12 +130,12 @@
                     L’architettura scolastica contemporanea deve farsi <strong>organismo senziente</strong>. La mia visione olistica nasce dalla convinzione che lo spazio fisico agisca come un "insegnante silenzioso": ogni riverbero acustico, ogni spettro cromatico e ogni flesso di luce naturale può essere un catalizzatore di inclusione o, al contrario, una barriera per la neurodiversità.
                 </p>
                 <p style="margin-top: 30px;">
-                    Integrando l'<strong>Universal Design for Learning (UDL)</strong>, superiamo il concetto obsoleto di "abbattimento delle barriere". Progettare per la <strong>neurodiversità spaziale</strong> significa riconoscere che lo spettro dei bisogni umani è vasto: dalle ipersensibilità sensoriali all'ADHD. Lo spazio deve offrire una "dieta sensoriale" equilibrata.
+                    Integrando l'<strong>Universal Design for Learning (UDL)</strong>, superiamo il concetto obsoleto di "abbattimento delle barriere". Progettare per la <strong>neurodiversità spaziale</strong> significaglass riconoscere che lo spettro dei bisogni umani è vasto: dalle ipersensibilità sensoriali all'ADHD. Lo spazio deve offrire una "dieta sensoriale" equilibrata.
                 </p>
             </div>
             <div class="text-block">
                 <p>
-                    In questa prospettiva, <strong>conservazione storica</strong> e innovazione <strong>NZEB</strong> sono i poli di una nuova resilienza. La scuola del futuro abita edifici antichi rendendoli tecnologicamente performanti e cognitivamente ospitali. È una sfida di <strong>Urban Regeneration</strong> che parte dal plesso scolastico per guarire il tessuto sociale.
+                    In questa prospettiva, <strong>conservazione storica</strong> e innovazione <strong>NZEB</strong> sono i poli di una nuova resilience. La scuola del futuro abita edifici antichi rendendoli tecnologicamente performanti e cognitivamente ospitali. È una sfida di <strong>Urban Regeneration</strong> che parte dal plesso scolastico per guarire il tessuto sociale.
                 </p>
                 <p style="margin-top: 30px;">
                     La qualità dello spazio è <strong>pedagogia implicita</strong>. Attraverso materiali naturali, geometrie frattali e zone di decompressione, l'edificio diventa un luogo di quiete, dove la bellezza cessa di essere un orpello per diventare un diritto civile fondamentale.
@@ -129,8 +144,8 @@
         </section>
 
         <div style="margin: 80px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <img src="img/tecnica-udl.jpg" alt="Applicazione Tecnica UDL scolastico" class="vision-img">
-            <p class="caption">Archeologia Digitale & Performance: Integrazione NZEB in un plesso storico scolastico.</p>
+            <img src="../img/visione-architettura.jpg" alt="Vision UDL Architettonica" class="vision-img">
+            <p class="caption">Visione Architettonica per l'Apprendimento Universale</p>
         </div>
 
         <div class="quote-center">
@@ -157,7 +172,7 @@
         </section>
 
         <div style="margin: 100px 0;">
-            <img src="img/scuola-futuro.jpg" alt="Scuola del Futuro rigenerata" class="vision-img">
+            <img src="../img/scuola-futuro.jpg" alt="Scuola del Futuro rigenerata" class="vision-img">
             <p class="caption">La Scuola Rigenerata: Un organismo biodinamico per la comunità del futuro.</p>
         </div>
 
