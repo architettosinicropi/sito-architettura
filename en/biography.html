@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CDK82JBQ2Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CDK82JBQ2Z');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDK82JBQ2Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CDK82JBQ2Z');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biography | Antonino Sinicropi | Architect Ph.D. & UDL Expert</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style-home.css">
+    
     <style>
         :root { 
             --main-black: #111; 
@@ -38,19 +40,6 @@
             margin: 0 auto; 
             padding: 0 25px; 
         }
-
-        /* Header & Nav */
-        header { 
-            padding: 25px 0; 
-            border-bottom: 1px solid var(--light-border);
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.98);
-            z-index: 100;
-        }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo a { font-weight: 700; letter-spacing: 2px; text-decoration: none; color: inherit; font-size: 0.85rem; }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: inherit; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
 
         /* Hero Section */
         main { padding: 60px 0; }
@@ -114,7 +103,6 @@
             .biography-content { order: 1; flex: 2; }
             aside { order: 2; flex: 1; position: sticky; top: 120px; height: fit-content; }
             .sidebar-box { border: none; border-left: 1px solid var(--main-black); background: transparent; padding: 0 0 0 40px; }
-            .nav-links a { margin-left: 40px; }
         }
 
         /* Footer */
@@ -140,22 +128,44 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-white">
 
+    <!-- MENU OVERLAY -->
+    <div id="menu-overlay" onclick="toggleMenu()"></div>
+
+    <!-- STRUTTURA HEADER IN INGLESE CON LOGO COERENTE -->
     <header>
-         <div class="logo">
+        <div class="logo">
             <a href="home.html" style="text-decoration:none; color:black;">ANTONINO SINICROPI</a>
         </div>
         <nav class="nav-desktop">
             <a href="home.html#profile">Profile</a>
             <a href="cv.html">Curriculum</a>
-            <a href="biography.html">Biography</a>
+            <a href="biography.html" class="active">Biography</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="home.html#expertise">Expertise</a>
             <a href="home.html#research">Research</a>
             <a href="home.html#contact">Contact</a>
         </nav>
+        <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
+
+    <!-- SIDEBAR MOBILE IN INGLESE -->
+    <div id="mobile-sidebar" class="sidebar">
+        <nav>
+            <a href="home.html#profile" onclick="toggleMenu()">Profile</a>
+            <a href="cv.html" onclick="toggleMenu()">Curriculum</a>
+            <a href="biography.html" class="active" onclick="toggleMenu()">Biography</a>
+            <a href="portfolio.html" onclick="toggleMenu()">Portfolio</a>
+            <a href="home.html#expertise" onclick="toggleMenu()">Expertise</a>
+            <a href="home.html#research" onclick="toggleMenu()">Research</a>
+            <a href="home.html#contact" onclick="toggleMenu()">Contact</a>
+        </nav>
+    </div>
 
     <main>
         <section class="container">
@@ -189,7 +199,7 @@
                     <p>
                         His commitment to inclusion finds fulfillment in the <strong>UDL</strong> (Universal Design for Learning) specialization, applying special pedagogy to spatial neurodiversity. 
                         <br><br>
-                        <a href="neurodiversita-spaziale.html" style="color:#111; font-weight:700; text-decoration: none; border-bottom: 2px solid #111; padding-bottom: 3px;">Learn more about the UDL vision →</a>
+                        <a href="spatial-neurodiversity.html" style="color:#111; font-weight:700; text-decoration: none; border-bottom: 2px solid #111; padding-bottom: 3px;">Learn more about the UDL vision →</a>
                     </p>
                 </article>
 
@@ -216,5 +226,12 @@
         </div>
     </footer>
 
+    <!-- INTERRUTTORE SCRIPT PER SIDEBAR MOBILE -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobile-sidebar").classList.toggle("active");
+            document.getElementById("menu-overlay").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
